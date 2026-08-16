@@ -10,6 +10,7 @@
   width: min(100%, 520px);
   height: auto;
   object-fit: contain;
+  transform: translateY(-3.5rem);
 }
 
 .hero-copy .actions {
@@ -25,5 +26,9 @@
   .hero-logo {
     min-height: 320px;
     padding: 1rem 2.5rem;
+  }
+
+  .hero-logo img {
+    transform: translateY(-1rem);
   }
 }
