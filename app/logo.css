@@ -22,6 +22,15 @@
   padding-top: 1.4rem;
 }
 
+.hero {
+  min-height: auto;
+  padding-bottom: 4.5rem;
+}
+
+.intro {
+  padding-top: 4.5rem;
+}
+
 @media (max-width: 560px) {
   .hero-logo {
     min-height: 320px;
@@ -30,5 +39,13 @@
 
   .hero-logo img {
     transform: translateY(-1rem);
+  }
+
+  .hero {
+    padding-bottom: 3rem;
+  }
+
+  .intro {
+    padding-top: 3.5rem;
   }
 }
