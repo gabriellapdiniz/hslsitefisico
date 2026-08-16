@@ -12,6 +12,15 @@
   object-fit: contain;
 }
 
+.hero-copy .actions {
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-copy .trust {
+  padding-top: 1.4rem;
+}
+
 @media (max-width: 560px) {
   .hero-logo {
     min-height: 320px;
