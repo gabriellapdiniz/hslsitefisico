@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  min-height: 400px;
   padding: 2rem;
 }
 
@@ -24,11 +25,11 @@
 
 .hero {
   min-height: auto;
-  padding-bottom: 4.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .intro {
-  padding-top: 4.5rem;
+  padding-top: 3rem;
 }
 
 @media (max-width: 560px) {
