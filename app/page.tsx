@@ -21,7 +21,7 @@ export default function Home(){
         <div className="actions"><a className="button" href="#contato">Quero conhecer a HSL <span>↗</span></a><a className="text-link" href="#programas">Explorar programas ↓</a></div>
         <div className="trust"><span><b>Atendimento individual</b><small>por padrão</small></span><span><b>Plano personalizado</b><small>para cada fase</small></span><span><b>Comunicação próxima</b><small>com a família</small></span></div>
       </div>
-      <div className="hero-art" aria-hidden="true"><div className="orb purple"/><div className="orb aqua"/><div className="study-card"><span className="mini-label">APRENDER COM</span><strong>confiança</strong><i>+ clareza<br/>+ autonomia<br/>+ acolhimento</i></div><div className="pencil"/><div className="heart">♡</div></div>
+      <div className="hero-art hero-logo"><img src="/logo-hsl.png" alt="Home Sweet Learning"/></div>
       <div className="wave"/>
     </section>
 
