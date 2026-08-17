@@ -15,11 +15,11 @@ export default function Home(){
 
     <section id="inicio" className="hero">
       <div className="dots d1"/><div className="hero-copy" data-reveal>
-        <h1>Seu filho não precisa estudar mais.<br/><em>Precisa encontrar o jeito certo de aprender.</em></h1>
+        <h1>Seu filho não precisa estudar mais.<br/><em>Precisa encontrar o <span className="hero-underline">jeito certo</span> de aprender.</em></h1>
         <div className="actions"><a className="button" href="#contato">Quero conhecer a HSL <span>↗</span></a><a className="text-link" href="#programas">Explorar programas ↓</a></div>
         <div className="trust"><span><b>Atendimento individual</b><small>por padrão</small></span><span><b>Plano personalizado</b><small>para cada fase</small></span><span><b>Comunicação próxima</b><small>com a família</small></span></div>
       </div>
-      <div className="hero-art hero-logo"><img src="/logo-hsl.png" alt="Home Sweet Learning"/><img className="hero-decorations" src="/hsl-hero-decorations.png" alt="" aria-hidden="true"/></div>
+      <div className="hero-art hero-logo"><img src="/logo-hsl.png" alt="Home Sweet Learning"/><img className="hero-decor decor-tape" src="/hsl-decor-tape.png" alt="" aria-hidden="true"/><img className="hero-decor decor-sparkle" src="/hsl-decor-sparkle.png" alt="" aria-hidden="true"/><img className="hero-decor decor-arrow" src="/hsl-decor-arrow.png" alt="" aria-hidden="true"/><img className="hero-decor decor-x" src="/hsl-decor-x.png" alt="" aria-hidden="true"/><img className="hero-decor decor-label" src="/hsl-decor-label.png" alt="" aria-hidden="true"/></div>
       <div className="wave"/>
     </section>
 
