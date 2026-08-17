@@ -63,7 +63,26 @@
   padding: 0;
   border-radius: 18px;
   overflow: hidden;
+  border: 1px solid rgba(8, 45, 92, 0.08);
   transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+/* Cores mais firmes e juvenis, usando somente a paleta oficial da HSL. */
+.service-row.p1 {
+  background: var(--navy);
+  color: #fff;
+}
+
+.service-row.p2 {
+  background: #69d1e2;
+}
+
+.service-row.p3 {
+  background: var(--orange);
+}
+
+.service-row.p4 {
+  background: #e5e7e9;
 }
 
 .service-row:hover {
@@ -109,6 +128,15 @@
   color: rgba(16, 27, 49, 0.62);
 }
 
+.service-row.p1 .service-heading > span,
+.service-row.p1 .service-heading small {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.service-row.p1 .service-heading > span {
+  color: var(--orange);
+}
+
 .service-more {
   flex: 0 0 auto;
   display: inline-flex;
@@ -120,6 +148,15 @@
   color: white;
   font-size: 0.8rem;
   font-weight: 700;
+}
+
+.service-row.p1 .service-more {
+  background: #fff;
+  color: var(--navy);
+}
+
+.service-row.p1 .service-more b {
+  color: var(--orange);
 }
 
 .service-more b {
@@ -135,6 +172,14 @@
 .service-detail {
   padding: 0 6.25rem 1.75rem;
   border-top: 1px solid rgba(8, 45, 92, 0.1);
+}
+
+.service-row.p1 .service-detail {
+  border-top-color: rgba(255, 255, 255, 0.2);
+}
+
+.service-row.p1 .service-detail p {
+  color: rgba(255, 255, 255, 0.82);
 }
 
 .service-detail p {
