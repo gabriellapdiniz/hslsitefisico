@@ -276,7 +276,7 @@ body {
     transform: translateY(-1rem);
   }
 
-  .hero-underline img { bottom: -4px; height: 6px; }
+  .hero-underline img { bottom: -6px; height: 9px; }
   .decor-tape { width: 82px; top: 14%; left: 27%; }
   .decor-sparkle { width: 26px; top: 19%; left: 5%; }
   .decor-arrow { width: 115px; top: 49%; left: -10%; }
