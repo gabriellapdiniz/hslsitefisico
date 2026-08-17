@@ -335,9 +335,9 @@ body {
   z-index: 0;
   width: 700px;
   height: 700px;
-  left: -355px;
-  top: -285px;
-  color: rgba(105, 209, 226, 0.62);
+  left: -155px;
+  top: -300px;
+  color: rgba(105, 209, 226, 0.28);
   stroke-width: 0.45;
   pointer-events: none;
 }
