@@ -419,6 +419,7 @@ body {
 
 .plans {
   padding-top: 58px;
+  scroll-margin-top: 82px;
 }
 
 .plans-head { max-width: 780px; }
