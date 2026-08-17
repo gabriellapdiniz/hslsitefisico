@@ -291,6 +291,131 @@ body {
   padding: 17px 0;
 }
 
+.benefits {
+  position: relative;
+  overflow: hidden;
+  align-items: start;
+}
+
+.benefits-title {
+  position: relative;
+  min-height: 720px;
+  isolation: isolate;
+}
+
+.benefits-title > .kicker,
+.benefits-title > h2 {
+  position: relative;
+  z-index: 2;
+}
+
+.benefits-title h2 {
+  margin-top: 38px;
+}
+
+.benefits-title h2 > span,
+.benefits-title h2 > em {
+  display: block;
+}
+
+.benefits-title h2 > span {
+  font-size: clamp(38px, 4vw, 58px);
+  line-height: 1.08;
+  font-weight: 400;
+}
+
+.benefits-title h2 > em {
+  margin-top: 18px;
+  font-size: clamp(58px, 6vw, 88px);
+  line-height: 1.02;
+}
+
+.benefit-arc {
+  position: absolute;
+  z-index: 0;
+  width: 700px;
+  height: 700px;
+  left: -355px;
+  top: -285px;
+  color: rgba(105, 209, 226, 0.62);
+  stroke-width: 0.45;
+  pointer-events: none;
+}
+
+.care-bracket {
+  position: absolute;
+  z-index: 3;
+  width: 72px;
+  height: 205px;
+  left: -51px;
+  top: 48%;
+  color: var(--orange);
+  clip-path: inset(0 50% 0 0);
+}
+
+.benefit-decor > * {
+  position: absolute;
+  z-index: 2;
+}
+
+.benefit-decor > :nth-child(1) {
+  width: 24px;
+  height: 24px;
+  left: 18%;
+  top: 69%;
+  color: var(--navy);
+}
+
+.benefit-decor > :nth-child(2) {
+  width: 28px;
+  height: 28px;
+  left: 42%;
+  top: 72%;
+  color: #31c4df;
+}
+
+.benefit-decor > :nth-child(3) {
+  width: 68px;
+  height: 34px;
+  left: 25%;
+  top: 79%;
+  color: var(--orange);
+}
+
+.benefit-decor > :nth-child(4) {
+  width: 92px;
+  height: 92px;
+  left: 0;
+  top: 88%;
+  color: #31c4df;
+}
+
+.benefit-list {
+  position: relative;
+}
+
+.benefit-sparkle,
+.benefit-slash {
+  position: absolute;
+  z-index: 2;
+}
+
+.benefit-sparkle {
+  width: 31px;
+  height: 31px;
+  right: -5%;
+  top: 33%;
+  color: var(--orange);
+}
+
+.benefit-slash {
+  width: 46px;
+  height: 46px;
+  right: -4%;
+  bottom: 2%;
+  color: #31c4df;
+}
+
 .benefit-list p {
   margin: 7px 0 0;
   line-height: 1.45;
@@ -307,6 +432,25 @@ body {
 @media (max-width: 900px) {
   .intro .split > div {
     transform: none;
+  }
+
+  .benefits-title {
+    min-height: 0;
+  }
+
+  .benefit-arc,
+  .benefit-decor,
+  .benefit-sparkle,
+  .benefit-slash {
+    display: none;
+  }
+
+  .benefits-title h2 > span {
+    font-size: clamp(36px, 10vw, 52px);
+  }
+
+  .benefits-title h2 > em {
+    font-size: clamp(52px, 14vw, 76px);
   }
 }
 
