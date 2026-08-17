@@ -115,6 +115,10 @@ body {
   z-index: 1;
 }
 
+.intro .split > div {
+  transform: translateY(-18px);
+}
+
 .intro-journey {
   position: absolute;
   z-index: 0;
@@ -298,6 +302,12 @@ body {
 
 .plans {
   padding-top: 58px;
+}
+
+@media (max-width: 900px) {
+  .intro .split > div {
+    transform: none;
+  }
 }
 
 @media (max-width: 560px) {
