@@ -19,7 +19,7 @@ export default function Home(){
         <div className="actions"><a className="button" href="#contato">Quero conhecer a HSL <span>↗</span></a><a className="text-link" href="#programas">Explorar programas ↓</a></div>
         <div className="trust"><span><b>Atendimento individual</b><small>por padrão</small></span><span><b>Plano personalizado</b><small>para cada fase</small></span><span><b>Comunicação próxima</b><small>com a família</small></span></div>
       </div>
-      <div className="hero-art hero-logo"><img src="/logo-hsl.png" alt="Home Sweet Learning"/></div>
+      <div className="hero-art hero-logo"><img src="/logo-hsl.png" alt="Home Sweet Learning"/><img className="hero-decorations" src="/hsl-hero-decorations.png" alt="" aria-hidden="true"/></div>
       <div className="wave"/>
     </section>
 
