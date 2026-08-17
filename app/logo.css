@@ -41,7 +41,7 @@ body {
 .decor-sparkle { width: 38px; top: 20%; right: 17%; }
 .decor-arrow { width: 190px; top: 49%; left: -2%; }
 .decor-x { width: 34px; top: 53%; right: 1%; transform: rotate(-5deg); }
-.decor-label { width: 155px; right: 6%; bottom: 13%; transform: rotate(-7deg); }
+.decor-label { width: 155px; right: 6%; bottom: 22%; transform: rotate(-7deg); }
 
 .hero-copy .actions {
   margin-top: 2rem;

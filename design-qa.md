@@ -17,6 +17,9 @@ Captura fornecida pela usuária em `codex-clipboard-e364fd59-0597-4404-8e31-94b5
 
 - Contenção horizontal reforçada para impedir rolagem lateral causada pelos elementos posicionados fora do eixo.
 - Escala e deslocamento responsivos aplicados à camada decorativa.
+- Elementos separados em cinco arquivos independentes para eliminar deformação conjunta.
+- Sublinhado laranja restaurado sob “jeito certo”.
+- Etiqueta reposicionada para permanecer visível em telas desktop mais baixas.
 
 ## Pendências
 
