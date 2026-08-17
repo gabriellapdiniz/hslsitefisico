@@ -314,41 +314,33 @@ body {
 }
 
 .benefits-title h2 > span,
-.benefits-title h2 > em {
+.benefit-large > em {
   display: block;
 }
 
-.benefits-title h2 > span {
+.benefits-title h2 > .benefit-small {
   font-size: clamp(38px, 4vw, 58px);
   line-height: 1.08;
   font-weight: 400;
 }
 
-.benefits-title h2 > em {
+.benefits-title h2 > .benefit-large {
+  position: relative;
   margin-top: 18px;
-  font-size: clamp(58px, 6vw, 88px);
-  line-height: 1.02;
 }
 
-.benefit-arc {
-  position: absolute;
-  z-index: 0;
-  width: 820px;
-  height: 820px;
-  left: -250px;
-  top: -320px;
-  color: rgba(105, 209, 226, 0.18);
-  stroke-width: 0.45;
-  pointer-events: none;
+.benefit-large > em {
+  font-size: clamp(58px, 6vw, 88px);
+  line-height: 1.02;
 }
 
 .care-bracket {
   position: absolute;
   z-index: 3;
-  width: 72px;
-  height: 205px;
-  left: -51px;
-  top: 48%;
+  width: 62px;
+  height: calc(100% + 8px);
+  left: -47px;
+  top: -4px;
   color: var(--orange);
   clip-path: inset(0 50% 0 0);
 }
@@ -438,18 +430,17 @@ body {
     min-height: 0;
   }
 
-  .benefit-arc,
   .benefit-decor,
   .benefit-sparkle,
   .benefit-slash {
     display: none;
   }
 
-  .benefits-title h2 > span {
+  .benefits-title h2 > .benefit-small {
     font-size: clamp(36px, 10vw, 52px);
   }
 
-  .benefits-title h2 > em {
+  .benefit-large > em {
     font-size: clamp(52px, 14vw, 76px);
   }
 }
