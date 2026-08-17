@@ -1,6 +1,6 @@
 "use client";
-import {useEffect} from "react";
-import {PiBracketsSquareLight, PiChatCircleDots, PiCircleThin, PiDotsNine, PiLineSegmentLight, PiPlusLight, PiPuzzlePiece, PiSparkleLight, PiUserCircle, PiWaveSineLight} from "react-icons/pi";
+import {useEffect, useRef, useState} from "react";
+import {PiArrowLeft, PiArrowRight, PiBookOpenText, PiBracketsSquareLight, PiCalendarCheck, PiChartLineUp, PiChatCircleDots, PiCircleThin, PiClipboardText, PiDotsNine, PiHandTap, PiLineSegmentLight, PiListChecks, PiNotebook, PiPlusLight, PiPuzzlePiece, PiSparkleLight, PiStarFourFill, PiUserCircle, PiUsersThree, PiWaveSineLight} from "react-icons/pi";
 
 const programs = [
   {n:"01",title:"Inglês",text:"Comunicação, confiança e evolução contínua, com encontros de 60 minutos e material próprio.",tag:"Por nível e objetivo",icon:"A"},
@@ -9,7 +9,17 @@ const programs = [
   {n:"04",title:"Combos HSL",text:"Inglês e acompanhamento escolar em uma agenda integrada, com economia e uma rotina mais leve.",tag:"Duas frentes, um cuidado",icon:"+"},
 ];
 
+const plans = [
+  {category:"INGLÊS",title:"Confiança para se comunicar",prices:[["1x por semana","3x","R$ 459"],["2x por semana","3x","R$ 819"]],starting:"3x R$ 459",benefits:[[PiNotebook,"Plano personalizado"],[PiBookOpenText,"Material próprio"],[PiChartLineUp,"Acompanhamento da evolução"]],cta:"Quero conversar sobre Inglês"},
+  {category:"ACOMPANHAMENTO",title:"Mais organização, menos sufoco",prices:[["1x por semana","3x","R$ 509"],["2x por semana","3x","R$ 919"]],starting:"3x R$ 509",benefits:[[PiUserCircle,"Apoio individual"],[PiCalendarCheck,"Organização da rotina"],[PiListChecks,"Estratégias para provas e tarefas"]],cta:"Quero conversar sobre Acompanhamento"},
+  {category:"PSICOPEDAGOGIA",title:"Compreender para desenvolver",prices:[["Pacote de 10 sessões","3x","R$ 700"],["Sessão flexível","","R$ 240"]],starting:"R$ 240",benefits:[[PiUserCircle,"Atendimento individual"],[PiClipboardText,"Plano de intervenção"],[PiUsersThree,"Devolutivas para a família"]],cta:"Quero conversar sobre Psicopedagogia"},
+];
+
 export default function Home(){
+  const [activePlan,setActivePlan]=useState(0);
+  const dragStart=useRef<number|null>(null);
+  const showPrevious=()=>setActivePlan(current=>(current+plans.length-1)%plans.length);
+  const showNext=()=>setActivePlan(current=>(current+1)%plans.length);
   useEffect(()=>{const els=document.querySelectorAll("[data-reveal]"); const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("shown");io.unobserve(e.target)}}),{threshold:.12});els.forEach(e=>io.observe(e));return()=>io.disconnect()},[]);
   return <main>
     <header className="nav"><a className="brand" href="#inicio"><span className="brandmark">H</span><span>Home Sweet Learning<small>Águas Claras</small></span></a><nav aria-label="Navegação principal"><a href="#programas">Programas</a><a href="#planos">Planos</a></nav><a className="button small" href="#contato">Agendar conversa</a></header>
@@ -30,10 +40,15 @@ export default function Home(){
 
     <section className="benefits section"><div className="benefits-title" data-reveal><span className="kicker">POR QUE A HSL?</span><h2><span className="benefit-small">Pequena no<br/>formato.</span><span className="benefit-large"><PiBracketsSquareLight className="care-bracket" aria-hidden="true"/><em>Grande no<br/>cuidado.</em></span></h2><div className="benefit-decor" aria-hidden="true"><PiCircleThin/><PiPlusLight/><PiWaveSineLight/><PiDotsNine/></div></div><div className="benefit-list"><PiSparkleLight className="benefit-sparkle" aria-hidden="true"/>{[["01","Atenção de verdade","Atendimento individual como padrão, respeitando ritmo e objetivos."],["02","Autonomia em construção","Apoio para a criança avançar com mais confiança, não depender do reforço."],["03","Família por perto","Comunicação humana, regras claras e acompanhamento contínuo."],["04","Rotina que cabe na vida","Horário reservado no ciclo e opções integradas para simplificar a semana."],["05","Escutamos","Conhecemos a criança, a família e o momento escolar."],["06","Planejamos","Definimos objetivos e uma rotina compatível com as necessidades reais."],["07","Acompanhamos","Observamos a evolução e ajustamos o percurso com clareza."]].map(x=><article key={x[0]} data-reveal><span>{x[0]}</span><div><h3>{x[1]}</h3><p>{x[2]}</p></div></article>)}<PiLineSegmentLight className="benefit-slash" aria-hidden="true"/></div></section>
 
-    <section id="planos" className="plans section"><div className="section-head" data-reveal><div><span className="kicker">INVESTIMENTO</span><h2>Escolha o ritmo.<br/><em>Nós cuidamos do caminho.</em></h2></div><p>Ciclos trimestrais reservam vaga e horário. Também há opções mensais flexíveis, conforme disponibilidade.</p></div><div className="price-grid">
-      <article data-reveal><span className="pill">INGLÊS</span><h3>Confiança para se comunicar</h3><p>1x por semana</p><strong>3x <b>R$ 459</b></strong><p>2x por semana</p><strong>3x <b>R$ 819</b></strong></article>
-      <article data-reveal><span className="pill">ACOMPANHAMENTO</span><h3>Mais organização, menos sufoco</h3><p>1x por semana</p><strong>3x <b>R$ 509</b></strong><p>2x por semana</p><strong>3x <b>R$ 919</b></strong></article>
-      <article className="featured" data-reveal><span className="pill">PSICOPEDAGOGIA</span><h3>Compreender para desenvolver</h3><p>Pacote de 10 sessões</p><strong>3x <b>R$ 700</b></strong><p>Sessão flexível</p><strong><b>R$ 240</b></strong></article>
+    <section id="planos" className="plans section"><div className="plans-head" data-reveal><span className="kicker">INVESTIMENTO</span><h2>Escolha o ritmo.<br/><em>Nós cuidamos do caminho.</em></h2><p>Ciclos trimestrais reservam vaga e horário. Também há opções mensais flexíveis, conforme disponibilidade.</p></div><div className="price-carousel" role="region" aria-label="Planos e investimentos" tabIndex={0} onKeyDown={event=>{if(event.key==="ArrowLeft"){event.preventDefault();showPrevious()}if(event.key==="ArrowRight"){event.preventDefault();showNext()}}} onPointerDown={event=>{if(!(event.target as HTMLElement).closest("button,a")){dragStart.current=event.clientX;event.currentTarget.setPointerCapture(event.pointerId)}}} onPointerUp={event=>{if(dragStart.current!==null){const distance=event.clientX-dragStart.current;if(Math.abs(distance)>45){distance>0?showPrevious():showNext()}dragStart.current=null}}}>
+      <div className="price-stage">
+        {plans.map((plan,index)=>{const state=index===activePlan?"is-active":index===(activePlan+plans.length-1)%plans.length?"is-prev":"is-next";return <article className={`price-card ${state}`} key={plan.category} aria-current={index===activePlan?"true":undefined} onClick={()=>index!==activePlan&&setActivePlan(index)}>
+          {index===activePlan?<><span className="featured-label"><PiStarFourFill aria-hidden="true"/> EM DESTAQUE</span><span className="price-category">{plan.category}</span><h3>{plan.title}</h3><div className="active-prices">{plan.prices.map(([label,prefix,value])=><div key={label}><span>{label}</span><strong>{prefix&&<small>{prefix}</small>} {value}</strong></div>)}</div><div className="plan-benefits">{plan.benefits.map(([Icon,label])=><div key={label as string}><Icon aria-hidden="true"/><span>{label as string}</span></div>)}</div><a className="plan-cta" href="#contato">{plan.cta}</a></>:<><span className="pill">{plan.category}</span><h3>{plan.title}</h3><div className="inactive-price"><span>A partir de</span><strong>{plan.starting}</strong></div><button type="button" onClick={event=>{event.stopPropagation();setActivePlan(index)}}>Ver plano</button></>}
+        </article>})}
+        <button className="price-nav price-prev" type="button" aria-label="Ver plano anterior" onClick={showPrevious}><PiArrowLeft aria-hidden="true"/></button><button className="price-nav price-next" type="button" aria-label="Ver próximo plano" onClick={showNext}><PiArrowRight aria-hidden="true"/></button>
+      </div>
+      <div className="price-dots" aria-label="Selecionar plano">{plans.map((plan,index)=><button key={plan.category} type="button" className={index===activePlan?"active":""} aria-label={`Selecionar ${plan.category}`} aria-current={index===activePlan?"true":undefined} onClick={()=>setActivePlan(index)}/>)}</div>
+      <p className="carousel-hint"><PiHandTap aria-hidden="true"/> Clique, arraste ou use as setas</p>
     </div><p className="fine">Valores do ciclo trimestral. Matrícula única de R$ 150 na primeira contratação. Material didático pode ser cobrado separadamente.</p></section>
 
     <section className="founding"><div data-reveal><span className="kicker light">LANÇAMENTO · 10 VAGAS</span><h2>Faça parte das<br/><em>Founding Families.</em></h2><p>As 10 primeiras famílias da HSL Águas Claras recebem isenção da matrícula no primeiro ciclo. Na Psicopedagogia, a triagem inicial também é gratuita na contratação do primeiro pacote.</p><a className="button orange" href="#contato">Quero saber se ainda há vagas ↗</a><small>Benefício limitado, pessoal e não cumulativo. Mensalidade paga normalmente desde o primeiro mês.</small></div><div className="big-ten" aria-hidden="true">10<span>famílias</span></div></section>
