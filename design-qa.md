@@ -20,6 +20,9 @@ Captura fornecida pela usuária em `codex-clipboard-e364fd59-0597-4404-8e31-94b5
 - Elementos separados em cinco arquivos independentes para eliminar deformação conjunta.
 - Sublinhado laranja restaurado sob “jeito certo”.
 - Etiqueta reposicionada para permanecer visível em telas desktop mais baixas.
+- Sublinhado substituído por um traço azul com textura real de giz e recorte sem margens transparentes.
+- Seta movida para o espaço entre a mensagem e a marca, sem atravessar o logo.
+- Ícones lineares adicionados aos três diferenciais abaixo dos CTAs.
 
 ## Pendências
 
