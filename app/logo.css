@@ -23,10 +23,19 @@ body {
 }
 
 .hero-underline {
-  text-decoration-line: underline;
-  text-decoration-color: var(--orange);
-  text-decoration-thickness: 3px;
-  text-underline-offset: 8px;
+  position: relative;
+  display: inline-block;
+}
+
+.hero-underline img {
+  position: absolute;
+  left: 1%;
+  right: 0;
+  bottom: -7px;
+  width: 99%;
+  height: 9px;
+  object-fit: fill;
+  pointer-events: none;
 }
 
 .hero-logo .hero-decor {
@@ -37,11 +46,33 @@ body {
   user-select: none;
 }
 
-.decor-tape { width: 122px; top: 18%; left: 11%; transform: rotate(-8deg); }
-.decor-sparkle { width: 38px; top: 20%; right: 17%; }
-.decor-arrow { width: 190px; top: 49%; left: -2%; }
-.decor-x { width: 34px; top: 53%; right: 1%; transform: rotate(-5deg); }
-.decor-label { width: 155px; right: 6%; bottom: 22%; transform: rotate(-7deg); }
+.decor-tape { width: 108px; top: 14%; left: 31%; transform: rotate(-8deg); }
+.decor-sparkle { width: 34px; top: 18%; left: 12%; }
+.decor-arrow { width: 170px; top: 49%; left: -20%; }
+.decor-x { width: 32px; top: 58%; right: 2%; transform: rotate(-5deg); }
+.decor-label { width: 140px; right: 18%; bottom: 17%; transform: rotate(-7deg); }
+
+.trust span + span {
+  border-left: 1px solid var(--line);
+  padding-left: 28px;
+}
+
+.trust-icon {
+  width: 27px;
+  height: 27px;
+  color: var(--navy);
+  margin-bottom: 10px;
+  stroke-width: 1.5;
+}
+
+.trust .icon-puzzle {
+  color: var(--navy);
+  filter: drop-shadow(7px 0 0 rgba(105, 209, 226, 0.8));
+}
+
+.trust .icon-chat {
+  color: var(--navy);
+}
 
 .hero-copy .actions {
   margin-top: 2rem;
@@ -245,12 +276,17 @@ body {
     transform: translateY(-1rem);
   }
 
-  .hero-underline { text-underline-offset: 5px; text-decoration-thickness: 2px; }
-  .decor-tape { width: 88px; top: 17%; left: -1%; }
-  .decor-sparkle { width: 28px; top: 24%; right: 20%; }
-  .decor-arrow { width: 145px; top: 48%; left: -5%; }
-  .decor-x { width: 28px; top: 45%; right: -2%; }
-  .decor-label { width: 116px; right: 0; bottom: 15%; }
+  .hero-underline img { bottom: -4px; height: 6px; }
+  .decor-tape { width: 82px; top: 14%; left: 27%; }
+  .decor-sparkle { width: 26px; top: 19%; left: 5%; }
+  .decor-arrow { width: 115px; top: 49%; left: -10%; }
+  .decor-x { width: 27px; top: 55%; right: 0; }
+  .decor-label { width: 110px; right: 10%; bottom: 17%; }
+
+  .trust span + span {
+    border-left: 0;
+    padding-left: 0;
+  }
 
   .hero {
     padding-bottom: 3rem;
