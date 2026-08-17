@@ -189,6 +189,15 @@
   color: #46536a;
 }
 
+.benefit-list article {
+  padding: 17px 0;
+}
+
+.benefit-list p {
+  margin: 7px 0 0;
+  line-height: 1.45;
+}
+
 @media (max-width: 560px) {
   .hero-logo {
     min-height: 320px;
