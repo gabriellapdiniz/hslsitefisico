@@ -46,10 +46,10 @@ body {
   user-select: none;
 }
 
-.decor-tape { width: 108px; top: 14%; left: 31%; transform: rotate(-8deg); }
-.decor-sparkle { width: 34px; top: 18%; left: 12%; }
-.decor-arrow { width: 170px; top: 49%; left: -20%; }
-.decor-x { width: 32px; top: 58%; right: 2%; transform: rotate(-5deg); }
+.decor-tape { width: 112px; top: 11%; left: 29%; transform: rotate(-8deg); }
+.decor-sparkle { width: 38px; top: 15%; left: 10%; }
+.decor-arrow { width: 184px; top: 49%; left: -22%; }
+.decor-x { width: 31px; top: 62%; right: 1%; transform: rotate(-5deg); }
 .decor-label { width: 140px; right: 18%; bottom: 17%; transform: rotate(-7deg); }
 
 .trust span + span {
@@ -89,8 +89,61 @@ body {
 }
 
 .intro {
+  position: relative;
   padding-top: 2.25rem;
   padding-bottom: 3rem;
+}
+
+.intro-kicker {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.intro-kicker > img {
+  width: 28px;
+  height: auto;
+}
+
+.intro .split {
+  position: relative;
+}
+
+.intro .split > h2,
+.intro .split > div {
+  position: relative;
+  z-index: 1;
+}
+
+.intro-journey {
+  position: absolute;
+  z-index: 0;
+  width: 92px;
+  height: 188px;
+  object-fit: contain;
+  left: 47.5%;
+  top: 46%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.tape-highlight {
+  display: inline-block;
+  position: relative;
+  isolation: isolate;
+}
+
+.tape-highlight > img {
+  position: absolute;
+  z-index: -1;
+  left: -3%;
+  right: -3%;
+  bottom: -1%;
+  width: 106%;
+  height: 58%;
+  object-fit: fill;
+  opacity: 0.72;
+  transform: rotate(-0.5deg);
 }
 
 .intro .split h2 {
@@ -277,10 +330,10 @@ body {
   }
 
   .hero-underline img { bottom: -6px; height: 9px; }
-  .decor-tape { width: 82px; top: 14%; left: 27%; }
-  .decor-sparkle { width: 26px; top: 19%; left: 5%; }
-  .decor-arrow { width: 115px; top: 49%; left: -10%; }
-  .decor-x { width: 27px; top: 55%; right: 0; }
+  .decor-tape { width: 84px; top: 11%; left: 27%; }
+  .decor-sparkle { width: 28px; top: 16%; left: 4%; }
+  .decor-arrow { width: 120px; top: 51%; left: -9%; }
+  .decor-x { width: 25px; top: 61%; right: 0; }
   .decor-label { width: 110px; right: 10%; bottom: 17%; }
 
   .trust span + span {
@@ -295,6 +348,25 @@ body {
   .intro {
     padding-top: 3.5rem;
     padding-bottom: 2.5rem;
+  }
+
+  .intro-kicker {
+    gap: 1rem;
+  }
+
+  .intro-kicker > img {
+    width: 22px;
+  }
+
+  .intro-journey {
+    position: relative;
+    display: block;
+    width: 68px;
+    height: 118px;
+    left: auto;
+    top: auto;
+    margin: 0.4rem auto 1rem;
+    transform: rotate(90deg);
   }
 
   .programs {
