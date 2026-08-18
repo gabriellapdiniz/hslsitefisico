@@ -156,32 +156,24 @@ body {
 }
 
 .service-row.program {
+  --service-accent: var(--navy);
   display: block;
   min-height: 0;
   padding: 0;
   border-radius: 18px;
   overflow: hidden;
-  border: 1px solid rgba(8, 45, 92, 0.08);
+  border: 1px solid #d4dce4;
+  border-left: 5px solid var(--service-accent);
+  background: #fff;
+  color: var(--ink);
   transition: box-shadow 0.25s ease, transform 0.25s ease;
 }
 
-/* Cores mais firmes e juvenis, usando somente a paleta oficial da HSL. */
-.service-row.p1 {
-  background: var(--navy);
-  color: #fff;
-}
-
-.service-row.p2 {
-  background: #69d1e2;
-}
-
-.service-row.p3 {
-  background: var(--orange);
-}
-
-.service-row.p4 {
-  background: #e5e7e9;
-}
+/* Cada serviço mantém sua identidade pela faixa lateral, sem pesar o conjunto. */
+.service-row.p1 { --service-accent: var(--navy); }
+.service-row.p2 { --service-accent: var(--blue); }
+.service-row.p3 { --service-accent: var(--orange); }
+.service-row.p4 { --service-accent: #a7b0bc; }
 
 .service-row:hover {
   transform: translateY(-2px);
@@ -211,6 +203,7 @@ body {
 
 .service-heading > span {
   width: 2rem;
+  color: var(--service-accent);
   font-size: 0.75rem;
   font-weight: 700;
 }
@@ -226,15 +219,6 @@ body {
   color: rgba(16, 27, 49, 0.62);
 }
 
-.service-row.p1 .service-heading > span,
-.service-row.p1 .service-heading small {
-  color: rgba(255, 255, 255, 0.72);
-}
-
-.service-row.p1 .service-heading > span {
-  color: var(--orange);
-}
-
 .service-more {
   flex: 0 0 auto;
   display: inline-flex;
@@ -248,16 +232,8 @@ body {
   font-weight: 700;
 }
 
-.service-row.p1 .service-more {
-  background: #fff;
-  color: var(--navy);
-}
-
-.service-row.p1 .service-more b {
-  color: var(--orange);
-}
-
 .service-more b {
+  color: var(--orange);
   font-size: 1.05rem;
   line-height: 1;
   transition: transform 0.25s ease;
@@ -270,14 +246,7 @@ body {
 .service-detail {
   padding: 0 6.25rem 1.75rem;
   border-top: 1px solid rgba(8, 45, 92, 0.1);
-}
-
-.service-row.p1 .service-detail {
-  border-top-color: rgba(255, 255, 255, 0.2);
-}
-
-.service-row.p1 .service-detail p {
-  color: rgba(255, 255, 255, 0.82);
+  background: #fbfcfd;
 }
 
 .service-detail p {
