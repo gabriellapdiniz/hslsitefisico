@@ -185,8 +185,8 @@ body {
 }
 
 .service-row-head {
-  min-height: 126px;
-  padding: 1.5rem 1.75rem;
+  min-height: 96px;
+  padding: 1.1rem 1.75rem;
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
@@ -216,14 +216,6 @@ body {
   font-size: 0.78rem;
   font-weight: 600;
   color: rgba(16, 27, 49, 0.62);
-}
-
-.service-summary {
-  max-width: 720px;
-  margin: 0.7rem 0 0;
-  color: #596679;
-  font-size: 0.88rem;
-  line-height: 1.55;
 }
 
 .service-more {
@@ -906,10 +898,10 @@ body {
 
   .service-row-head {
     min-height: 0;
-    padding: 1.25rem;
-    grid-template-columns: 1fr;
-    align-items: start;
-    gap: 1rem;
+    padding: 1rem 1.1rem;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.75rem;
   }
 
   .service-heading {
@@ -921,7 +913,7 @@ body {
   }
 
   .service-more {
-    margin-left: 2.25rem;
+    margin-left: 0;
     padding: 0.7rem 0.85rem;
   }
 
