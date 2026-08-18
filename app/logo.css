@@ -568,21 +568,21 @@ body {
 .price-category {
   margin-top: 3px;
   text-align: center;
-  font-size: 18px;
+  font-size: clamp(27px, 3vw, 36px);
   font-weight: 800;
-  line-height: 1.25;
-  letter-spacing: 0.11em;
+  line-height: 1.12;
+  letter-spacing: 0.055em;
 }
 
 .price-card.is-active > h3 {
   min-height: 0;
-  margin: 11px auto 22px;
+  margin: 10px auto 22px;
   max-width: 360px;
   color: #fff;
   text-align: center;
-  font-size: 36px;
-  line-height: 1.22;
-  font-weight: 600;
+  font-size: 19px;
+  line-height: 1.35;
+  font-weight: 500;
 }
 
 .active-prices {
@@ -867,8 +867,8 @@ body {
     padding: 26px 24px 28px;
   }
 
-  .price-card.is-active > h3 { font-size: 30px; }
-  .price-category { font-size: 15px; }
+  .price-card.is-active > h3 { font-size: 17px; }
+  .price-category { font-size: clamp(25px, 8vw, 31px); }
   .active-prices > div { padding: 18px 8px 16px; }
   .active-prices span { font-size: 12px; }
   .active-prices strong { font-size: 27px; }
