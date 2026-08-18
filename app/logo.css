@@ -452,7 +452,7 @@ body {
 
 .price-stage {
   position: relative;
-  height: 590px;
+  height: 495px;
   max-width: 1220px;
   margin: 0 auto;
 }
@@ -462,8 +462,8 @@ body {
   left: 50%;
   top: 50%;
   width: 285px;
-  min-height: 390px;
-  padding: 42px 36px 32px;
+  min-height: 360px;
+  padding: 36px 36px 28px;
   border: 1px solid #cfd6df;
   border-radius: 22px;
   background: #fff;
@@ -481,8 +481,8 @@ body {
 .price-card.is-active {
   z-index: 3;
   width: 460px;
-  min-height: 550px;
-  padding: 30px 38px 34px;
+  min-height: 455px;
+  padding: 26px 38px 28px;
   transform: translate(-50%, -50%);
   border-color: var(--navy);
   background: var(--navy);
@@ -496,7 +496,7 @@ body {
 .price-card button:focus-visible,
 .price-nav:focus-visible,
 .price-dots button:focus-visible,
-.plan-cta:focus-visible {
+.plans-general-cta:focus-visible {
   outline: 3px solid var(--blue);
   outline-offset: 4px;
 }
@@ -613,28 +613,13 @@ body {
 .plan-benefits {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  margin: 19px 0 20px;
+  margin: 18px 0 0;
 }
 
 .plan-benefits > div { min-width: 0; padding: 0 12px; text-align: center; }
 .plan-benefits > div + div { border-left: 1px solid rgba(255,255,255,.28); }
 .plan-benefits svg { width: 31px; height: 31px; margin-bottom: 7px; }
 .plan-benefits span { display: block; font-size: 13px; line-height: 1.35; }
-
-.plan-cta {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 52px;
-  margin-top: auto;
-  padding: 13px 18px;
-  border-radius: 9px;
-  background: var(--orange);
-  color: #fff;
-  text-align: center;
-  font-size: 15px;
-  font-weight: 700;
-}
 
 .price-nav {
   position: absolute;
@@ -682,6 +667,15 @@ body {
 }
 
 .carousel-hint svg { width: 25px; height: 25px; color: var(--navy); }
+
+.plans-general-cta {
+  display: flex;
+  width: max-content;
+  max-width: 92%;
+  margin: 20px auto 0;
+  padding-inline: 30px;
+  text-align: center;
+}
 
 .combo-price-note {
   display: grid;
@@ -761,7 +755,7 @@ body {
     font-size: clamp(52px, 14vw, 76px);
   }
 
-  .price-stage { height: 620px; }
+  .price-stage { height: 500px; }
 
   .price-card.is-prev,
   .price-card.is-next {
@@ -860,11 +854,11 @@ body {
   .plans-head h2 { font-size: clamp(38px, 12vw, 54px); }
   .plans-head p { font-size: 16px; }
   .price-carousel { margin-top: 26px; }
-  .price-stage { height: 635px; }
+  .price-stage { height: 500px; }
 
   .price-card.is-active {
-    min-height: 590px;
-    padding: 26px 24px 28px;
+    min-height: 455px;
+    padding: 24px 24px 25px;
   }
 
   .price-card.is-active > h3 { font-size: 17px; }
