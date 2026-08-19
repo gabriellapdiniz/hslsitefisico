@@ -10,9 +10,9 @@ const programs = [
 ];
 
 const plans = [
-  {category:"PSICOPEDAGOGIA",title:"Compreender para desenvolver",price:"R$ 210/sessão"},
+  {category:"PSICOPEDAGOGIA",title:"Compreender para desenvolver",price:"R$ 210/sessão",benefits:[[PiPuzzlePiece,"Compreensão das dificuldades de aprendizagem"],[PiTarget,"Estratégias personalizadas para aprender melhor"],[PiChartLineUp,"Autonomia e confiança para aprender"]] as const},
   {category:"INGLÊS",title:"Confiança para se comunicar",price:"R$ 499/mês",priceNote:"Valores para planos trimestrais",benefits:[[PiNotebook,"Plano personalizado"],[PiBookOpenText,"Material próprio"],[PiChartLineUp,"Acompanhamento da evolução"]] as const},
-  {category:"ACOMPANHAMENTO / REFORÇO",title:"Mais organização, menos sufoco",price:"R$ 559/mês"},
+  {category:"ACOMPANHAMENTO / REFORÇO",title:"Mais organização, menos sufoco",price:"R$ 559/mês",schools:["Marista","La Salle","Salesiano","Olimpo","Serius","COC","Innova","Sigma","Galois","Colégio Militar","Colégio Militar dos Bombeiros","Leonardo da Vinci","CIMAN","Vitória Régia","Único","Maple Bear","Escola Canadense de Brasília","Escolas Classe da Asa Sul","Entre outras"] as const},
 ];
 
 export default function Home(){
@@ -40,9 +40,10 @@ export default function Home(){
 
     <section id="planos" className="plans section"><div className="plans-shell"><div className="plans-head" data-reveal><span className="kicker">INVESTIMENTO</span><h2>Escolha o ritmo.<br/><em>Nós cuidamos do caminho.</em></h2><p>Ciclos trimestrais reservam vaga e horário. Também há opções mensais flexíveis, conforme disponibilidade.</p><PiSparkleLight className="plans-sparkle" aria-hidden="true"/></div><div className="plan-tabs-wrap" data-reveal>
       <div className="plan-tabs" role="tablist" aria-label="Programas HSL">{plans.map((plan,index)=><button id={`plan-tab-${index}`} key={plan.category} type="button" role="tab" aria-selected={activePlan===index} aria-controls="plan-tab-panel" tabIndex={activePlan===index?0:-1} className={activePlan===index?"is-active":""} onClick={()=>setActivePlan(index)} onKeyDown={event=>{if(event.key==="ArrowLeft"||event.key==="ArrowRight"){event.preventDefault();const direction=event.key==="ArrowRight"?1:-1;const next=(index+direction+plans.length)%plans.length;setActivePlan(next);requestAnimationFrame(()=>document.getElementById(`plan-tab-${next}`)?.focus())}}}>{plan.category}</button>)}</div>
-      {(()=>{const plan=plans[activePlan];const benefits="benefits" in plan?plan.benefits:undefined;return <article id="plan-tab-panel" className={`plan-tab-panel ${benefits?"has-benefits":"is-simple"}`} role="tabpanel" aria-labelledby={`plan-tab-${activePlan}`} key={plan.category}>
+      {(()=>{const plan=plans[activePlan];const benefits="benefits" in plan?plan.benefits:undefined;const schools="schools" in plan?plan.schools:undefined;return <article id="plan-tab-panel" className={`plan-tab-panel ${benefits?"has-benefits":""} ${schools?"has-schools":""}`} role="tabpanel" aria-labelledby={`plan-tab-${activePlan}`} key={plan.category}>
         <div className="plan-main"><span className="price-category">{plan.category}</span><h3>{plan.title}</h3><div className="plan-price"><span>A partir de</span><strong>{plan.price}</strong></div>{"priceNote" in plan&&plan.priceNote?<p className="plan-price-note">{plan.priceNote}</p>:null}<div className="plan-button-wrap"><img src="/hsl-decor-arrow.png" alt="" aria-hidden="true"/><a className="plan-button" href="#contato">Ver plano</a></div></div>
         {benefits?<div className="plan-benefits" aria-label="Benefícios do plano">{benefits.map(([Icon,label])=><div key={label}><span className="plan-benefit-icon"><Icon aria-hidden="true"/></span><strong>{label}</strong></div>)}</div>:null}
+        {schools?<div className="plan-schools" aria-label="Referências escolares dos alunos atendidos"><h4>Alunos que acompanhamos estudam em escolas como:</h4><div className="school-tags">{schools.map(school=><span className={school.length>22?"is-wide":undefined} key={school}>{school}</span>)}</div><p>Instituições citadas como referência escolar dos alunos atendidos, sem vínculo institucional com a HSL.</p></div>:null}
       </article>})()}
       <a className="button orange plans-general-cta" href="#contato">Quero conversar sobre os programas ↗</a>
       <div className="combo-price-note" role="note" aria-label="Informações sobre Combos HSL">
