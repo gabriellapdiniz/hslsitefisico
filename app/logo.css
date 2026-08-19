@@ -1240,7 +1240,7 @@ body {
   background: rgba(255,255,255,.18);
 }
 
-.plan-benefit-icon {
+.plan-tab-panel .plan-benefit-icon {
   flex: 0 0 auto;
   width: 44px;
   height: 44px;
@@ -1248,9 +1248,11 @@ body {
   background: rgba(46,199,230,.1);
   display: grid;
   place-items: center;
+  line-height: 0;
 }
 
 .plan-tab-panel .plan-benefits svg {
+  display: block;
   width: 22px;
   height: 22px;
   margin: 0;
@@ -1559,7 +1561,7 @@ body {
     left: 54px;
   }
 
-  .plan-benefit-icon {
+  .plan-tab-panel .plan-benefit-icon {
     width: 40px;
     height: 40px;
   }
