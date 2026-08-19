@@ -363,6 +363,36 @@ body {
   .service-expand { transition: none; }
 }
 
+.faq-list summary {
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.faq-list summary span {
+  flex: 0 0 auto;
+  line-height: 1;
+  transform-origin: center;
+  transition: transform 180ms ease;
+}
+
+.faq-list details[open] summary span {
+  transform: rotate(45deg);
+}
+
+.faq-list details[open] p {
+  animation: faq-reveal 220ms ease-out;
+}
+
+@keyframes faq-reveal {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .faq-list summary span { transition: none; }
+  .faq-list details[open] p { animation: none; }
+}
+
 .benefit-list article {
   padding: 17px 0;
 }
