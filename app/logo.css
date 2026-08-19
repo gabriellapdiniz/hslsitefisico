@@ -149,6 +149,7 @@ body {
 
 .programs {
   padding-top: 4rem;
+  padding-bottom: 2.75rem;
 }
 
 .program-grid.service-list {
@@ -370,6 +371,7 @@ body {
   position: relative;
   overflow: hidden;
   align-items: start;
+  padding-top: 3.25rem;
 }
 
 .benefits-title {
