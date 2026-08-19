@@ -1,6 +1,7 @@
 "use client";
 import {useEffect, useState} from "react";
-import {PiBookOpenText, PiBracketsSquareLight, PiChartLineUp, PiChatCircleDots, PiCheckCircle, PiCircleThin, PiDotsNine, PiLineSegmentLight, PiNotebook, PiPlusLight, PiPuzzlePiece, PiSparkleLight, PiTarget, PiUserCircle, PiWaveSineLight} from "react-icons/pi";
+import {PiBracketsSquareLight, PiChatCircleDots, PiCheckCircle, PiCircleThin, PiDotsNine, PiLineSegmentLight, PiPlusLight, PiPuzzlePiece, PiSparkleLight, PiTarget, PiUserCircle, PiWaveSineLight} from "react-icons/pi";
+import {LuBookOpen, LuBrainCircuit, LuChartNoAxesCombined, LuClipboardList, LuRoute, LuSprout} from "react-icons/lu";
 
 const programs = [
   {n:"01",title:"Inglês",tag:"Por nível e objetivo",summary:"Comunicação, confiança e evolução contínua, com encontros de 60 minutos e material próprio.",paragraphs:["Aprender inglês não precisa ser uma sequência de palavras decoradas, exercícios repetitivos e medo de falar.","Na HSL, cada aluno aprende a partir do seu nível, dos seus objetivos e da forma como se desenvolve melhor. As aulas são planejadas para transformar o inglês em uma ferramenta de comunicação real, trabalhando compreensão, fala, leitura e escrita de maneira leve, contextualizada e progressiva.","Utilizamos materiais próprios, atividades dinâmicas e temas que se conectam à idade e aos interesses do aluno. Assim, ele participa mais, ganha confiança para se comunicar e consegue perceber a própria evolução.","Mais do que “saber a matéria”, queremos que o aluno se sinta capaz de usar o inglês."],practicalTitle:"Na prática, seu filho terá:",items:["Aulas individuais e personalizadas;","Encontros de 60 minutos;","Material próprio da HSL;","Acompanhamento contínuo da evolução;","Atividades adequadas ao nível, à idade e aos objetivos;","Um ambiente seguro para perguntar, tentar e aprender."],closing:"Conte para nós o que seu filho precisa. Vamos encontrar o melhor caminho para ele."},
@@ -10,8 +11,8 @@ const programs = [
 ];
 
 const plans = [
-  {category:"PSICOPEDAGOGIA",title:"Compreender para desenvolver",price:"R$ 210/sessão",benefits:[[PiPuzzlePiece,"Compreensão das dificuldades de aprendizagem"],[PiTarget,"Estratégias personalizadas para aprender melhor"],[PiChartLineUp,"Autonomia e confiança para aprender"]] as const},
-  {category:"INGLÊS",title:"Confiança para se comunicar",price:"R$ 499/mês",priceNote:"Valores para planos trimestrais",benefits:[[PiNotebook,"Plano personalizado"],[PiBookOpenText,"Material próprio"],[PiChartLineUp,"Acompanhamento da evolução"]] as const},
+  {category:"PSICOPEDAGOGIA",title:"Compreender para desenvolver",price:"R$ 210/sessão",benefits:[[LuBrainCircuit,"Compreensão das dificuldades de aprendizagem"],[LuRoute,"Estratégias personalizadas para aprender melhor"],[LuSprout,"Autonomia e confiança para aprender"]] as const},
+  {category:"INGLÊS",title:"Confiança para se comunicar",price:"R$ 499/mês",priceNote:"Valores para planos trimestrais",benefits:[[LuClipboardList,"Plano personalizado"],[LuBookOpen,"Material próprio"],[LuChartNoAxesCombined,"Acompanhamento da evolução"]] as const},
   {category:"ACOMPANHAMENTO / REFORÇO",title:"Mais organização, menos sufoco",price:"R$ 559/mês",schoolColumns:[["Marista","Olimpo","Innova","Colégio Militar","Leonardo da Vinci","Único","Escola Canadense de Brasília"],["La Salle","Serius","Sigma","Colégio Militar dos Bombeiros","CIMAN","Maple Bear","Escolas Classe da Asa Sul"],["Salesiano","COC","Galois","Vitória Régia","Entre outras"]] as const},
 ];
 
