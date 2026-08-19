@@ -63,11 +63,11 @@ body {
   color: var(--navy);
   margin-bottom: 10px;
   stroke-width: 1.5;
+  filter: drop-shadow(7px 0 0 rgba(105, 209, 226, 0.8));
 }
 
 .trust .icon-puzzle {
   color: var(--navy);
-  filter: drop-shadow(7px 0 0 rgba(105, 209, 226, 0.8));
 }
 
 .trust .icon-chat {
