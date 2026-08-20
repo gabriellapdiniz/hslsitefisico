@@ -26,3 +26,11 @@
 .contact-curve{position:absolute;z-index:1;width:28%;height:110px;left:46%;top:54%;border-top:2px solid var(--orange);border-radius:50%;transform:rotate(8deg);opacity:.9}
 @media(max-width:900px){.contact{padding:76px 5vw}.contact-panel{grid-template-columns:1fr;gap:52px}.contact-curve{display:none}}
 @media(max-width:560px){.contact{padding:62px 5vw}.contact-panel{padding:46px 23px;border-radius:27px}.contact-copy h2{font-size:40px}.contact-copy>p{font-size:16px}.contact-whatsapp{width:100%;gap:12px;padding-inline:18px}.contact-meta{flex-direction:column;gap:9px}.contact-dots{margin-top:32px}.contact-card{padding:30px 22px}.contact-sparkle{right:-8px;top:-26px;font-size:40px}}
+
+.contact-whatsapp{width:max-content;max-width:100%;min-height:auto;padding:14px 20px;background:transparent;border:1.5px solid #fff;color:#fff;border-radius:999px;box-shadow:none;transition:background-color 200ms ease,color 200ms ease}
+.contact-whatsapp .contact-icon{color:var(--blue);transition:color 200ms ease}
+.contact-whatsapp .contact-icon:after{display:none}
+.contact-whatsapp b{color:var(--orange)}
+.contact-whatsapp:hover{background:#fff;color:var(--navy);box-shadow:none;transform:none}
+.contact-whatsapp:hover .contact-icon{color:var(--navy)}
+@media(max-width:560px){.contact-whatsapp{width:max-content;padding-inline:18px}}
