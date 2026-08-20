@@ -1,0 +1,28 @@
+.contact{display:block;background:#eaf8f8;padding:96px 6vw;color:#fff}
+.contact-panel{max-width:1370px;margin:auto;position:relative;display:grid;grid-template-columns:58fr 42fr;gap:clamp(42px,6vw,90px);align-items:center;background:var(--navy);border-radius:36px;padding:clamp(52px,6vw,88px);overflow:hidden}
+.contact-copy{position:relative;z-index:2}
+.contact-copy h2{font-size:clamp(42px,5vw,70px);margin:24px 0 26px}
+.contact-copy h2 em{display:inline;color:var(--orange)}
+.contact-copy>p{color:#cbd7e5;max-width:650px;font-size:18px;line-height:1.65;margin:0 0 30px}
+.contact-whatsapp{min-height:60px;padding:17px 26px;margin:0;background:var(--orange);color:var(--ink);font-size:15px}
+.contact-whatsapp b{font-size:18px}
+.contact-icon{position:relative;display:grid;place-items:center;font-size:23px;color:var(--navy)}
+.contact-icon:after{content:"";position:absolute;width:15px;height:15px;border:1px solid var(--blue);border-radius:50%;transform:translate(2px,2px)}
+.contact-meta{display:flex;flex-wrap:wrap;gap:12px 26px;margin-top:25px;color:#d4deea;font-size:13px}
+.contact-meta a{text-decoration:underline;text-underline-offset:4px}
+.contact-dots{width:35px;height:35px;margin-top:42px;background-image:radial-gradient(var(--blue) 2px,transparent 2px);background-size:12px 12px}
+.contact-form-wrap{position:relative;z-index:2}
+.contact-card{background:#fffdf8;color:var(--ink);padding:clamp(30px,3.6vw,46px);border-radius:26px;box-shadow:0 16px 40px #001a3530}
+.contact-card>span{display:block;font-size:11px;font-weight:700;letter-spacing:.16em;color:var(--navy)}
+.contact-card h3{font-family:Manrope;font-size:clamp(28px,2.6vw,38px);letter-spacing:-.04em;margin:13px 0 29px}
+.contact-card label{display:block;margin-top:18px;font-size:10px;font-weight:700;letter-spacing:.13em;color:var(--navy)}
+.contact-card input,.contact-card select{width:100%;height:50px;margin-top:8px;border:0;border-bottom:1px solid #bac4ce;border-radius:0;background:transparent;color:var(--ink);font:500 15px "DM Sans",sans-serif;outline:none}
+.contact-card input:focus,.contact-card select:focus{border-bottom:2px solid var(--blue)}
+.contact-card input::placeholder{color:#7b8491}
+.contact-submit{width:100%;min-height:52px;margin-top:28px;border:1.5px solid var(--navy);border-radius:99px;background:#fffdf8;color:var(--navy);font:700 14px "DM Sans",sans-serif;cursor:pointer;transition:.2s}
+.contact-submit:hover,.contact-submit:focus-visible{background:var(--navy);color:#fff;transform:translateY(-1px)}
+.contact-followup{margin:14px 0 0;text-align:center;color:#697487;font-size:12px}
+.contact-sparkle{position:absolute;z-index:3;right:-18px;top:-23px;font-size:48px;color:var(--blue);filter:drop-shadow(2px 2px 0 #fff)}
+.contact-curve{position:absolute;z-index:1;width:28%;height:110px;left:46%;top:54%;border-top:2px solid var(--orange);border-radius:50%;transform:rotate(8deg);opacity:.9}
+@media(max-width:900px){.contact{padding:76px 5vw}.contact-panel{grid-template-columns:1fr;gap:52px}.contact-curve{display:none}}
+@media(max-width:560px){.contact{padding:62px 5vw}.contact-panel{padding:46px 23px;border-radius:27px}.contact-copy h2{font-size:40px}.contact-copy>p{font-size:16px}.contact-whatsapp{width:100%;gap:12px;padding-inline:18px}.contact-meta{flex-direction:column;gap:9px}.contact-dots{margin-top:32px}.contact-card{padding:30px 22px}.contact-sparkle{right:-8px;top:-26px;font-size:40px}}

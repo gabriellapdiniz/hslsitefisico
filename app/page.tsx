@@ -1,6 +1,7 @@
 "use client";
+import "./contact.css";
 import {useEffect, useState} from "react";
-import {PiBracketsSquareLight, PiChatCircleDots, PiCheckCircle, PiCircleThin, PiDotsNine, PiLineSegmentLight, PiPlusLight, PiPuzzlePiece, PiSparkleLight, PiTarget, PiUserCircle, PiWaveSineLight} from "react-icons/pi";
+import {PiBracketsSquareLight, PiChatCircleDots, PiCheckCircle, PiCircleThin, PiDotsNine, PiLineSegmentLight, PiPlusLight, PiPuzzlePiece, PiSparkleLight, PiTarget, PiUserCircle, PiWaveSineLight, PiWhatsappLogo} from "react-icons/pi";
 import {LuBookOpen, LuBrainCircuit, LuChartNoAxesCombined, LuClipboardList, LuRoute, LuSprout} from "react-icons/lu";
 
 const programs = [
@@ -28,6 +29,24 @@ const faqs = [
 export default function Home(){
   const [activePlan,setActivePlan]=useState(1);
   const [activeProgram,setActiveProgram]=useState<number|null>(null);
+  const [contactName,setContactName]=useState("");
+  const [contactPhone,setContactPhone]=useState("");
+  const [contactProgram,setContactProgram]=useState("");
+  const [contactSent,setContactSent]=useState(false);
+  const formatPhone=(value:string)=>{
+    const digits=value.replace(/\D/g,"").slice(0,11);
+    if(digits.length<=2)return digits?`(${digits}`:"";
+    if(digits.length<=6)return `(${digits.slice(0,2)}) ${digits.slice(2)}`;
+    if(digits.length<=10)return `(${digits.slice(0,2)}) ${digits.slice(2,6)}-${digits.slice(6)}`;
+    return `(${digits.slice(0,2)}) ${digits.slice(2,7)}-${digits.slice(7)}`;
+  };
+  const sendContact=(event:React.FormEvent<HTMLFormElement>)=>{
+    event.preventDefault();
+    if(!event.currentTarget.reportValidity())return;
+    const message=encodeURIComponent(`Olá! Meu nome é ${contactName}. Tenho interesse em ${contactProgram} e gostaria de receber mais informações.`);
+    setContactSent(true);
+    window.open(`https://wa.me/5561999783314?text=${message}`,"_blank","noopener,noreferrer");
+  };
   useEffect(()=>{const els=document.querySelectorAll("[data-reveal]"); const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("shown");io.unobserve(e.target)}}),{threshold:.12});els.forEach(e=>io.observe(e));return()=>io.disconnect()},[]);
   return <main>
     <header className="nav"><a className="brand" href="#inicio"><span className="brandmark">H</span><span>Home Sweet Learning<small>Águas Claras</small></span></a><nav aria-label="Navegação principal"><a href="#programas">Programas</a><a href="#planos">Planos</a></nav><a className="button small" href="#contato">Agendar conversa</a></header>
@@ -64,7 +83,7 @@ export default function Home(){
 
     <section className="faq section"><div data-reveal><span className="kicker">DÚVIDAS FREQUENTES</span><h2>Antes de começar,<br/><em>vale saber.</em></h2></div><div className="faq-list">{faqs.map((x,i)=><details key={i} data-reveal><summary>{x[0]}<span aria-hidden="true">+</span></summary><p>{x[1]}</p></details>)}</div></section>
 
-    <section id="contato" className="contact"><div className="contact-copy" data-reveal><span className="kicker light">VAMOS CONVERSAR?</span><h2>O próximo passo pode ser<br/><em>mais leve do que parece.</em></h2><p>Conte um pouco sobre a criança e o que vocês estão buscando. A HSL ajuda a encontrar o caminho mais adequado.</p><a className="button orange" href="mailto:homesweetlearningbr@gmail.com?subject=Quero conhecer a HSL Águas Claras">Agendar uma conversa ↗</a></div><div className="contact-card" data-reveal><span>HSL ÁGUAS CLARAS</span><h3>Aprender também<br/>pode ser acolhedor.</h3><a href="mailto:homesweetlearningbr@gmail.com">homesweetlearningbr@gmail.com</a><p>Atendimento presencial<br/>Águas Claras · Distrito Federal</p></div></section>
+    <section id="contato" className="contact"><div className="contact-panel"><div className="contact-copy" data-reveal><span className="kicker light">VAMOS CONVERSAR?</span><h2>O próximo passo<br/>pode ser <em>mais leve.</em></h2><p>Fale com a gente pelo WhatsApp ou deixe seus dados. Primeiro entendemos; depois indicamos o melhor caminho.</p><a className="button orange contact-whatsapp" href="https://wa.me/5561999783314" target="_blank" rel="noreferrer"><span className="contact-icon"><PiWhatsappLogo aria-hidden="true"/></span>Conversar pelo WhatsApp <b aria-hidden="true">↗</b></a><div className="contact-meta"><a href="mailto:homesweetlearningbr@gmail.com">homesweetlearningbr@gmail.com</a><span>Águas Claras · DF</span></div><div className="contact-dots" aria-hidden="true"/></div><div className="contact-curve" aria-hidden="true"/><div className="contact-form-wrap" data-reveal><PiSparkleLight className="contact-sparkle" aria-hidden="true"/><form id="contact-form" className="contact-card" onSubmit={sendContact}><span>SE PREFERIR, ESCREVA</span><h3>Diga só o essencial.</h3><label>NOME<input required autoComplete="name" value={contactName} onChange={event=>{setContactName(event.target.value);setContactSent(false)}} placeholder="Digite seu nome"/></label><label>WHATSAPP<input required type="tel" inputMode="tel" autoComplete="tel" minLength={14} value={contactPhone} onChange={event=>{setContactPhone(formatPhone(event.target.value));setContactSent(false)}} placeholder="Digite seu WhatsApp"/></label><label>COMO PODEMOS AJUDAR?<select required value={contactProgram} onChange={event=>{setContactProgram(event.target.value);setContactSent(false)}}><option value="" disabled>Escolha um programa</option><option>Inglês</option><option>Acompanhamento / Reforço Escolar</option><option>Psicopedagogia</option><option>Combos</option><option>Ainda não sei</option></select></label><button className="contact-submit" type="submit">Enviar contato <span aria-hidden="true">→</span></button><p className="contact-followup" role={contactSent?"status":undefined}>{contactSent?"Tudo certo! Abrimos o WhatsApp com sua mensagem pronta.":"A gente continua a conversa com você."}</p></form></div></div></section>
     <footer><a className="brand" href="#inicio"><span className="brandmark">H</span><span>Home Sweet Learning<small>Águas Claras</small></span></a><p>Inglês · Acompanhamento Escolar · Psicopedagogia</p><a href="#inicio">Voltar ao topo ↑</a></footer>
   </main>
 }
