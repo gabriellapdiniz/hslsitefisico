@@ -34,3 +34,12 @@
 .contact-whatsapp:hover{background:#fff;color:var(--navy);box-shadow:none;transform:none}
 .contact-whatsapp:hover .contact-icon{color:var(--navy)}
 @media(max-width:560px){.contact-whatsapp{width:max-content;padding-inline:18px}}
+
+.contact-visit{display:flex;align-items:center;flex-wrap:wrap;gap:5px 7px;margin-top:17px;font-size:13px;line-height:1.55}
+.contact-visit>svg{flex:0 0 auto;color:var(--blue);font-size:17px}
+.contact-visit>span{color:#ffffffb3}
+.contact-visit>a{color:var(--blue);font-weight:600;text-underline-offset:4px}
+.contact-visit>a:hover{text-decoration:underline}
+.contact-meta{flex-direction:column;align-items:flex-start;gap:9px;margin-top:25px;line-height:1.55}
+.contact-meta>span{max-width:100%;overflow-wrap:normal;word-break:normal}
+@media(max-width:560px){.contact-whatsapp{width:100%}.contact-visit{justify-content:center;text-align:center;margin-top:16px}.contact-meta{align-items:flex-start;margin-top:27px}.contact-meta a,.contact-meta span{display:block;width:100%}}
