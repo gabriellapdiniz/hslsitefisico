@@ -43,3 +43,6 @@
 .contact-meta{flex-direction:column;align-items:flex-start;gap:9px;margin-top:25px;line-height:1.55}
 .contact-meta>span{max-width:100%;overflow-wrap:normal;word-break:normal}
 @media(max-width:560px){.contact-whatsapp{width:100%}.contact-visit{justify-content:center;text-align:center;margin-top:16px}.contact-meta{align-items:flex-start;margin-top:27px}.contact-meta a,.contact-meta span{display:block;width:100%}}
+
+.contact{padding-block:24px}
+@media(max-width:560px){.contact{padding-block:18px}}
