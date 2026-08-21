@@ -60,7 +60,7 @@ export default function Home(){
   };
   useEffect(()=>{const els=document.querySelectorAll("[data-reveal]"); const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("shown");io.unobserve(e.target)}}),{threshold:.12});els.forEach(e=>io.observe(e));return()=>io.disconnect()},[]);
   return <main>
-    <header className="nav"><a className="brand" href="#inicio"><span className="brandmark">H</span><span>Home Sweet Learning<small>Águas Claras</small></span></a><nav aria-label="Navegação principal"><a href="#programas">Programas</a><a href="#historia">Nossa história</a><a href="#planos">Planos</a></nav><a className="button small" href="#contato">Agendar conversa</a></header>
+    <header className="nav"><a className="brand" href="#inicio"><span className="brandmark">H</span><span>Home Sweet Learning<small>Águas Claras</small></span></a><nav aria-label="Navegação principal"><a href="#programas">Programas</a><a href="#historia">Nossa história</a><a href="#planos">Planos</a><a href="#contato">Contato</a></nav><a className="button small" href="#contato">Agendar conversa</a></header>
 
     <section id="inicio" className="hero">
       <div className="dots d1"/><div className="hero-copy" data-reveal>
