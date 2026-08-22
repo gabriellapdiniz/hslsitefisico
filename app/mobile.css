@@ -1,0 +1,531 @@
+/* Shared brand asset only; responsive rules below are scoped to the hero. */
+img.brandmark {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  background: #fff;
+}
+
+.contact .contact-meta { display: none; }
+
+.footer-contact-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  line-height: 1.45;
+}
+
+.footer-contact-meta a {
+  color: var(--navy);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.plan-tabs button:nth-child(4),
+.combo-price-note-inline { display: none; }
+
+@media (max-width: 768px) {
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) clamp(88px, 24vw, 110px);
+    grid-template-areas:
+      "primary art"
+      "secondary secondary"
+      "actions actions"
+      "trust trust";
+    column-gap: clamp(14px, 4vw, 24px);
+    min-height: 0;
+    height: auto;
+    padding: 52px clamp(20px, 6vw, 42px) 52px;
+    overflow-x: clip;
+  }
+
+  .hero-copy { display: contents; }
+
+  .hero h1 {
+    display: contents;
+  }
+
+  .hero-title-primary,
+  .hero-title-secondary {
+    display: block;
+    font-family: Manrope, sans-serif;
+    font-size: clamp(36px, 8.2vw, 58px);
+    font-weight: 500;
+    line-height: 1.01;
+    letter-spacing: -.06em;
+  }
+
+  .hero-title-primary {
+    grid-area: primary;
+    align-self: center;
+    min-width: 0;
+  }
+
+  .hero-title-secondary {
+    grid-area: secondary;
+    width: 100%;
+    margin-top: 22px;
+  }
+
+  .hero h1 > br { display: none; }
+  .hero-underline img { bottom: -5px; height: 8px; }
+
+  .hero-copy .actions {
+    grid-area: actions;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 680px;
+    margin: 30px auto 0;
+    gap: 12px;
+  }
+
+  .hero-copy .actions .button {
+    width: 100%;
+    min-height: 56px;
+    padding: 16px 22px;
+  }
+
+  .hero-copy .actions .text-link {
+    align-self: center;
+    padding: 9px 0;
+    text-align: center;
+  }
+
+  .hero-logo {
+    grid-area: art;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(88px, 24vw, 110px);
+    min-height: 0;
+    height: auto;
+    aspect-ratio: 1;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .hero-logo > img:first-child {
+    position: static;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: none;
+  }
+
+  .hero-logo .hero-decor { display: none; }
+
+  .hero-copy .trust {
+    grid-area: trust;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 680px;
+    margin: 22px auto 0;
+    padding-top: 22px;
+    gap: 0;
+  }
+
+  .hero-copy .trust > span,
+  .hero-copy .trust > span + span {
+    display: grid;
+    grid-template-columns: 34px minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    align-items: center;
+    column-gap: 14px;
+    min-width: 0;
+    padding: 14px 0;
+    border-left: 0;
+  }
+
+  .hero-copy .trust > span + span { border-top: 1px solid var(--line); }
+
+  .hero-copy .trust-icon {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    width: 27px;
+    height: 27px;
+    margin: 0;
+  }
+
+  .hero-copy .trust b,
+  .hero-copy .trust small { grid-column: 2; }
+
+  .hero-copy .trust b { font-size: 13px; line-height: 1.3; }
+  .hero-copy .trust small { margin-top: 2px; font-size: 12px; line-height: 1.35; }
+
+  .hero .d1 { display: none; }
+
+  .hero .wave { height: 40px; bottom: -20px; }
+
+  .intro,
+  .intro .split,
+  .intro-left,
+  .intro-copy {
+    min-height: 0;
+    height: auto;
+  }
+
+  .intro .split { gap: 0; }
+
+  .intro-kicker > img { display: none; }
+
+  .intro-journey {
+    position: static;
+    display: none;
+    width: 0;
+    height: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    transform: none;
+  }
+
+  .intro-copy { margin-top: 40px; }
+  .intro-copy > :first-child { margin-top: 0; }
+
+  .programs .section-head {
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .programs .section-head > div { width: 100%; }
+  .programs .section-head .kicker { display: block; }
+
+  .programs .section-head h2 {
+    margin: 28px 0 0;
+  }
+
+  .programs .section-head > p {
+    max-width: none;
+    margin: 32px 0 0;
+  }
+
+  .programs .program-grid.service-list {
+    margin-top: 48px;
+  }
+
+  .programs .service-row.program {
+    min-height: 0;
+    height: auto;
+  }
+
+  .programs .service-row-head {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr) max-content;
+    grid-template-areas:
+      "number title button"
+      ". subtitle subtitle";
+    align-items: start;
+    column-gap: 8px;
+    row-gap: 6px;
+    min-height: 0;
+    height: auto;
+    padding: 16px;
+  }
+
+  .programs .service-heading { display: contents; }
+
+  .programs .service-heading > span {
+    grid-area: number;
+    width: auto;
+    margin-top: 0;
+  }
+
+  .programs .service-heading > div {
+    display: contents;
+    min-width: 0;
+  }
+
+  .programs .service-row .service-heading h3 {
+    grid-area: title;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    line-height: 1.18;
+  }
+
+  .programs .service-row .service-heading small {
+    grid-area: subtitle;
+    display: block;
+    line-height: 1.4;
+  }
+
+  .programs .service-more {
+    grid-area: button;
+    position: static;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    justify-self: end;
+    width: auto;
+    min-width: 0;
+    height: 34px;
+    min-height: 34px;
+    margin: 0;
+    padding: 0 11px;
+    font-size: 12.5px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .programs .service-more > span {
+    font-size: 0;
+  }
+
+  .programs .service-more > span::after {
+    content: "Saiba";
+    font-size: 12.5px;
+  }
+
+  .programs .service-more[aria-expanded="true"] > span::after {
+    content: "Fechar";
+  }
+
+  .plans .plan-tabs-wrap {
+    overflow: visible;
+  }
+
+  .plans .plan-tabs {
+    display: flex;
+    justify-content: space-between;
+    gap: clamp(6px, 1.8vw, 8px);
+    overflow: visible;
+    overflow-x: visible;
+    border: 0;
+    border-bottom: 1px solid #d7dfe6;
+    border-radius: 0;
+    background: transparent;
+    scrollbar-width: none;
+    scroll-snap-type: none;
+  }
+
+  .plans .plan-tabs::-webkit-scrollbar { display: none; }
+
+  .plans .plan-tabs button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 auto;
+    width: auto;
+    min-width: 0;
+    min-height: 44px;
+    padding: 8px 3px;
+    border: 0;
+    border-bottom: 3px solid transparent;
+    border-radius: 0;
+    background: transparent;
+    color: #0b3568;
+    font-size: 0;
+    text-align: center;
+    white-space: nowrap;
+    overflow: visible;
+    scroll-snap-align: none;
+  }
+
+  .plans .plan-tabs button.is-active {
+    border-bottom-color: #ff8614;
+    background: transparent;
+    box-shadow: none;
+    color: #ff8614;
+  }
+
+  .plans .plan-tabs button:nth-child(1) { order: 3; }
+  .plans .plan-tabs button:nth-child(2) { order: 1; }
+  .plans .plan-tabs button:nth-child(3) { order: 2; }
+  .plans .plan-tabs button:nth-child(4) {
+    display: inline-flex;
+    flex-direction: row-reverse;
+    order: 4;
+    color: #ff8614;
+  }
+
+  .plans .plan-tabs button::after {
+    font-size: clamp(11px, 3vw, 12px);
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: 1.25;
+  }
+
+  .plans .plan-tabs button:nth-child(1)::after { content: "Psicopedagogia"; }
+  .plans .plan-tabs button:nth-child(2)::after { content: "Inglês"; }
+  .plans .plan-tabs button:nth-child(3)::after { content: "Reforço"; }
+  .plans .plan-tabs button:nth-child(4)::after {
+    content: "Combo";
+    color: #ff8614;
+  }
+
+  .plans .plan-tabs button:nth-child(4)::before {
+    content: "+";
+    margin-left: 2px;
+    color: #2ec7e6;
+    font-size: clamp(11px, 3vw, 12px);
+    font-weight: 900;
+    line-height: 1.25;
+  }
+
+  .plans .plan-tabs button:nth-child(4).is-active {
+    border-bottom-color: #2ec7e6;
+  }
+
+  .plans .plan-tab-panel {
+    margin-top: 16px;
+  }
+
+  .plans .combo-price-note-inline {
+    display: grid;
+    margin-top: 16px;
+  }
+
+  .plans .combo-price-note-standalone {
+    display: none;
+  }
+
+  .plans .plan-schools .school-columns {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  .plans .plan-schools .school-item,
+  .plans .plan-schools .school-item.is-long {
+    grid-column: auto;
+    min-height: 0;
+    align-items: start;
+    column-gap: 4px;
+    padding: 3px 0;
+    line-height: 1.25;
+  }
+
+  .plans .plan-schools .school-item > svg:first-child {
+    align-self: start;
+    margin-top: 3px;
+  }
+
+  .plans .plan-schools > p {
+    margin-top: 16px;
+  }
+
+  .plans .plan-tab-panel .plan-benefits strong {
+    font-size: 15.5px;
+    font-weight: 400;
+    line-height: 1.22;
+  }
+
+  .plans .plan-tab-panel .plan-benefits > div {
+    min-height: 52px;
+    padding: 8px 0;
+  }
+
+  .faq .faq-list details {
+    padding: 17px 0;
+  }
+
+  .faq .faq-list summary {
+    align-items: center;
+    font-weight: 400;
+    line-height: 1.25;
+  }
+
+  .faq .faq-list summary span {
+    align-self: center;
+  }
+
+  .faq .faq-list details[open] p {
+    margin-top: 16px;
+  }
+
+  .contact {
+    min-height: 0;
+    height: auto;
+    overflow-x: clip;
+  }
+
+  .contact .contact-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 32px;
+    min-height: 0;
+    height: auto;
+    padding-bottom: 48px;
+  }
+
+  .contact .contact-copy,
+  .contact .contact-form-wrap,
+  .contact .contact-card {
+    width: 100%;
+    min-height: 0;
+    height: auto;
+  }
+
+  .contact .contact-copy > p {
+    margin-bottom: 24px;
+  }
+
+  .contact .contact-whatsapp {
+    width: max-content;
+    max-width: 100%;
+    min-height: 44px;
+    margin: 0;
+    padding: 11px 14px;
+    gap: 9px;
+    font-size: 13px;
+  }
+
+  .contact .contact-visit {
+    justify-content: flex-start;
+    margin-top: 16px;
+    text-align: left;
+  }
+
+  .contact .contact-meta {
+    gap: 8px;
+    margin-top: 24px;
+  }
+
+  .contact .contact-dots {
+    display: none;
+  }
+
+  .contact .contact-form-wrap {
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
+
+  .contact .contact-card {
+    margin: 0;
+  }
+
+  .contact .contact-sparkle {
+    right: 8px;
+    top: 8px;
+    font-size: 34px;
+  }
+
+  footer {
+    align-items: flex-start;
+    gap: 12px;
+    text-align: left;
+  }
+
+  footer .footer-contact-meta {
+    align-items: flex-start;
+    gap: 3px;
+    line-height: 1.3;
+    text-align: left;
+  }
+}
+
+@media (max-width: 390px) {
+  .hero-title-primary,
+  .hero-title-secondary { font-size: clamp(34px, 9.7vw, 38px); }
+}
