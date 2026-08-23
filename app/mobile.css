@@ -566,6 +566,11 @@ img.brandmark {
     height: auto;
     padding: clamp(48px, 6vw, 68px) clamp(32px, 6vw, 76px) clamp(48px, 6vw, 68px);
   }
+
+  .plans .plan-schools .school-item.is-last {
+    grid-column: auto;
+    margin-top: 4px;
+  }
   .hero-copy { display: contents; }
   .hero h1 { grid-column: 1; grid-row: 1; align-self: end; margin: 0; font-size: clamp(42px, 5vw, 62px); }
   .hero-copy .actions { grid-column: 1; grid-row: 2; align-self: start; margin: 28px 0 0; }
@@ -627,10 +632,10 @@ img.brandmark {
   .plan-tab-panel .plan-benefits { padding-left: clamp(24px, 4vw, 52px); }
   .plan-tab-panel .plan-benefits strong { font-size: clamp(14px, 1.6vw, 17px); }
   .plan-schools { padding-left: clamp(22px, 3vw, 38px); }
-  .school-columns { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 6px 14px; }
+  .school-columns { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 9px clamp(28px,3vw,36px); }
   .school-column { display: contents; }
   .school-column + .school-column { border-left: 0; }
-  .school-item.is-long { grid-column: 1 / -1; }
+  .plans .plan-schools .school-item.is-last { grid-column: 1 / -1; margin-top: 3px; }
   .plans .combo-price-note-inline { grid-template-columns: 1fr; margin-top: 10px; padding: 28px 32px; }
   .plans .combo-price-note-inline .combo-summary { padding-right: 0; }
   .plans .combo-price-note-inline .combo-levels { margin-top: 22px; padding: 16px 0 0; border-top: 1px solid #d7dfe6; border-left: 0; }
