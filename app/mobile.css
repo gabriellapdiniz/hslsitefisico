@@ -552,21 +552,38 @@ img.brandmark {
 }
 
 /* Tablet e desktop estreito: faixa contínua entre os layouts aprovados. */
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) and (max-width: 1279.9px) {
+  html { scroll-padding-top: 88px; }
+  #programas, #historia, #planos, #contato { scroll-margin-top: 88px; }
   .nav { height: 68px; padding-inline: clamp(28px, 5vw, 64px); }
   .nav nav, .nav > .button.small { display: none; }
   .section { padding: clamp(58px, 7vw, 86px) clamp(32px, 6vw, 76px); }
 
-  .hero { min-height: 0; height: auto; padding: clamp(54px, 7vw, 86px) clamp(32px, 6vw, 76px) clamp(62px, 8vw, 96px); gap: clamp(28px, 5vw, 64px); }
-  .hero h1 { font-size: clamp(46px, 5.6vw, 66px); }
+  .hero {
+    grid-template-columns: minmax(0, 1fr) clamp(180px, 23vw, 260px);
+    grid-template-rows: auto auto auto;
+    column-gap: clamp(28px, 5vw, 60px);
+    row-gap: 0;
+    align-items: center;
+    min-height: 0;
+    height: auto;
+    padding: clamp(48px, 6vw, 68px) clamp(32px, 6vw, 76px) clamp(48px, 6vw, 68px);
+  }
+  .hero-copy { display: contents; }
+  .hero h1 { grid-column: 1; grid-row: 1; align-self: end; margin: 0; font-size: clamp(42px, 5vw, 62px); }
+  .hero-copy .actions { grid-column: 1; grid-row: 2; align-self: start; margin: 28px 0 0; }
+  .hero .trust { grid-column: 1 / -1; grid-row: 3; margin-top: 30px; padding-top: 24px; }
+  .hero-logo { grid-column: 2; grid-row: 1 / 3; min-height: 0; height: auto; padding: 0; }
+  .hero-logo > img:first-child { width: clamp(180px, 23vw, 260px); transform: none; }
   .hero .dots, .hero-logo .hero-decor, .wave { display: none; }
-  .hero-copy { max-width: 720px; }
   .trust { gap: clamp(18px, 3vw, 32px); }
 
-  .intro { padding-block: clamp(48px, 6vw, 72px); }
+  .intro { min-height: 0; height: auto; padding-block: clamp(56px, 6vw, 72px); }
   .intro .split { gap: clamp(24px, 4vw, 52px); }
   .intro-journey { display: none; }
+  .intro-kicker > img { display: none; }
   .intro-indicators { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 30px; }
+  .intro-indicators > div { min-height: 0; height: auto; }
 
   .programs { padding-block: clamp(52px, 6vw, 76px); }
   .section-head { gap: 22px; }
@@ -586,16 +603,27 @@ img.brandmark {
   .history-timeline { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 30px; }
   .history-item { padding: 22px 0 24px; }
   .history-item:nth-last-child(-n+2) { border-bottom: 1px solid #cbd1d7; }
+  .history-item:last-child { grid-column: 1 / -1; width: min(100%, 540px); justify-self: center; }
 
   .plans { padding-block: clamp(46px, 6vw, 68px); }
   .plans-head { padding-right: 80px; }
   .plans-head h2 { font-size: clamp(43px, 5.2vw, 58px); }
-  .plans .plan-tabs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; overflow: hidden; }
-  .plans .plan-tabs button { display: inline-flex; min-width: 0; padding-inline: 8px; font-size: clamp(10px, 1.15vw, 13px); letter-spacing: .025em; }
+  .plans .plan-tabs-wrap { margin-top: 24px; }
+  .plans .plan-tabs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; overflow: hidden; border: 0; border-bottom: 1px solid #bfd0da; border-radius: 0; background: transparent; }
+  .plans .plan-tabs button { position: relative; display: inline-flex; min-width: 0; min-height: 48px; padding: 8px 6px 12px; border: 0; border-bottom: 3px solid transparent; border-radius: 0; background: transparent; box-shadow: none; color: #50647d; font-size: 0; letter-spacing: 0; white-space: normal; }
+  .plans .plan-tabs button::after { font-size: clamp(12px, 1.5vw, 14px); font-weight: 700; line-height: 1.2; }
+  .plans .plan-tabs button:nth-child(1)::after { content: "Psicopedagogia"; }
+  .plans .plan-tabs button:nth-child(2)::after { content: "Inglês"; }
+  .plans .plan-tabs button:nth-child(3)::after { content: "Reforço"; }
+  .plans .plan-tabs button:nth-child(4)::after { content: "Combo +"; color: #ff8614; }
+  .plans .plan-tabs button:hover { background: transparent; color: #0b3568; }
+  .plans .plan-tabs button.is-active { border-bottom-color: #0b3568; background: transparent; box-shadow: none; color: #0b3568; }
+  .plans .plan-tabs button:nth-child(4).is-active { border-bottom-color: #ff8614; }
+  .plans .plan-tabs button:focus-visible { outline: 3px solid #2ec7e6; outline-offset: -3px; }
   .plans .plan-tabs button:nth-child(4) { display: inline-flex; }
   .combo-price-note-inline { display: grid; }
   .combo-price-note-standalone { display: none !important; }
-  .plan-tab-panel { min-height: 0; padding: clamp(24px, 3.5vw, 38px); grid-template-columns: minmax(230px,.9fr) minmax(0,1.1fr); }
+  .plan-tab-panel { min-height: 0; margin-top: 10px; padding: clamp(24px, 3.5vw, 38px); grid-template-columns: minmax(230px,.9fr) minmax(0,1.1fr); }
   .plan-main { padding-right: clamp(24px, 4vw, 52px); }
   .plan-tab-panel .plan-benefits { padding-left: clamp(24px, 4vw, 52px); }
   .plan-tab-panel .plan-benefits strong { font-size: clamp(14px, 1.6vw, 17px); }
@@ -604,9 +632,11 @@ img.brandmark {
   .school-column { display: contents; }
   .school-column + .school-column { border-left: 0; }
   .school-item.is-long { grid-column: 1 / -1; }
-  .plans .combo-price-note-inline { grid-template-columns: 1fr; padding: 28px 32px; }
+  .plans .combo-price-note-inline { grid-template-columns: 1fr; margin-top: 10px; padding: 28px 32px; }
   .plans .combo-price-note-inline .combo-summary { padding-right: 0; }
   .plans .combo-price-note-inline .combo-levels { margin-top: 22px; padding: 16px 0 0; border-top: 1px solid #d7dfe6; border-left: 0; }
+  .plans .plans-general-cta { margin-top: 12px; }
+  .plans .fine { margin-top: 12px; }
 
   .faq { grid-template-columns: 1fr; gap: 34px; }
   .faq h2 { font-size: clamp(42px, 5.5vw, 58px); }
@@ -623,14 +653,9 @@ img.brandmark {
 }
 
 @media (min-width: 768px) and (max-width: 899px) {
-  .hero { grid-template-columns: 1fr; }
-  .hero-logo { min-height: 0; padding: 0; justify-content: flex-start; }
-  .hero-logo > img:first-child { width: min(44vw, 330px); transform: none; }
   .intro .split { grid-template-columns: 1fr; }
 }
 
-@media (min-width: 900px) and (max-width: 1279px) {
-  .hero { grid-template-columns: minmax(0,1.08fr) minmax(280px,.72fr); align-items: center; }
-  .hero-logo { min-height: 0; padding: 0; }
-  .hero-logo > img:first-child { width: min(100%, 400px); transform: none; }
+@media (min-width: 900px) and (max-width: 1279.9px) {
+  .intro .split { grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); }
 }
