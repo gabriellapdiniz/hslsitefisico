@@ -189,6 +189,21 @@ img.brandmark {
   .intro-copy { margin-top: 40px; }
   .intro-copy > :first-child { margin-top: 0; }
 
+  .intro-indicators {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-top: 32px;
+  }
+
+  .intro-indicators > div {
+    padding: 16px 12px;
+  }
+
+  .intro-indicators > div:first-child { padding-left: 12px; }
+  .intro-indicators > div:nth-child(2) { border-right: 0; }
+  .intro-indicators > div:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .intro-indicators strong { font-size: 14px; }
+  .intro-indicators span { font-size: 12px; }
+
   .programs .section-head {
     align-items: stretch;
     gap: 0;
@@ -256,6 +271,12 @@ img.brandmark {
     grid-area: subtitle;
     display: block;
     line-height: 1.4;
+  }
+
+  .programs .service-audience {
+    margin-top: 4px;
+    font-size: 11px;
+    line-height: 1.35;
   }
 
   .programs .service-more {
