@@ -27,7 +27,7 @@ const assetBase = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 const plans = [
   {category:"PSICOPEDAGOGIA",title:"Compreender para desenvolver",price:"R$ 210/sessão",benefits:[[LuBrainCircuit,"Compreensão das dificuldades de aprendizagem"],[LuRoute,"Estratégias personalizadas para aprender melhor"],[LuSprout,"Autonomia e confiança para aprender"]] as const},
   {category:"INGLÊS",title:"Confiança para se comunicar",price:"R$ 499/mês",priceNote:"Valores para planos trimestrais",benefits:[[LuClipboardList,"Plano personalizado"],[LuBookOpen,"Material próprio"],[LuChartNoAxesCombined,"Acompanhamento da evolução"]] as const},
-  {category:"ACOMPANHAMENTO E REFORÇO ESCOLAR",title:"Mais organização, menos sufoco",price:"R$ 559/mês",schoolColumns:[["COC","CIMAN","Sigma","Único","Galois","Innova","Olimpo","Serius","Marista","La Salle","Salesiano","Maple Bear","Vitória Régia","Colégio Militar","Leonardo da Vinci","Escolas Classe da Asa Sul","Escola Canadense de Brasília","Colégio Militar dos Bombeiros","Escola Classe 05 do Guará","Entre outras"]] as const},
+  {category:"ACOMPANHAMENTO E REFORÇO ESCOLAR",title:"Mais organização, menos sufoco",price:"R$ 559/mês",schoolColumns:[["COC","CIMAN","Sigma","Único","Galois","Innova","Olimpo","Serius","Marista","La Salle","Salesiano","Maple Bear","Vitória Régia","Colégio Militar","Leonardo da Vinci","Escolas Classe da Asa Sul","Escola Canadense de Brasília","Escola Classe 05 do Guará","Colégio Militar dos Bombeiros","Entre outras"]] as const},
   {category:"COMBO +",title:"",price:""},
 ];
 
