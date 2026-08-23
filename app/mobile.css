@@ -553,8 +553,8 @@ img.brandmark {
 
 /* Tablet e desktop estreito: faixa contínua entre os layouts aprovados. */
 @media (min-width: 768px) and (max-width: 1279.9px) {
-  html { scroll-padding-top: 88px; }
-  #programas, #historia, #planos, #contato { scroll-margin-top: 88px; }
+  html { scroll-padding-top: 68px; }
+  #programas, #historia, #planos, #contato { scroll-margin-top: 20px; }
   .nav { height: 68px; padding-inline: clamp(28px, 5vw, 64px); }
   .nav nav, .nav > .button.small { display: none; }
   .section { padding: clamp(58px, 7vw, 86px) clamp(32px, 6vw, 76px); }
