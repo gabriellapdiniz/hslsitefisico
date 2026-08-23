@@ -1403,10 +1403,12 @@ body {
 }
 
 .school-item.is-last {
-  grid-column: 1 / -1;
+  grid-column: 2;
   margin-top: 3px;
   justify-self: start;
 }
+
+.school-item.is-last > span { font-size: 110%; }
 
 
 .school-item > svg:first-child {

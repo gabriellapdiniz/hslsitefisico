@@ -636,7 +636,7 @@ img.brandmark {
   .school-columns { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 9px clamp(28px,3vw,36px); }
   .school-column { display: contents; }
   .school-column + .school-column { border-left: 0; }
-  .plans .plan-schools .school-item.is-last { grid-column: 1 / -1; margin-top: 3px; }
+  .plans .plan-schools .school-item.is-last { grid-column: 2; margin-top: 3px; }
   .plans .combo-price-note-inline { grid-template-columns: 1fr; margin-top: 10px; padding: 28px 32px; }
   .plans .combo-price-note-inline .combo-summary { padding-right: 0; }
   .plans .combo-price-note-inline .combo-levels { margin-top: 22px; padding: 16px 0 0; border-top: 1px solid #d7dfe6; border-left: 0; }
