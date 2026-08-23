@@ -1408,6 +1408,8 @@ body {
   justify-self: start;
 }
 
+.school-item.is-right { grid-column: 2; }
+
 .school-item > svg:first-child {
   width: 9px;
   height: 9px;
