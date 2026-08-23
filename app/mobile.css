@@ -572,7 +572,6 @@ img.brandmark {
     margin-top: 4px;
   }
 
-  .plans .plan-schools .school-item.is-right { grid-column: auto; }
   .hero-copy { display: contents; }
   .hero h1 { grid-column: 1; grid-row: 1; align-self: end; margin: 0; font-size: clamp(42px, 5vw, 62px); }
   .hero-copy .actions { grid-column: 1; grid-row: 2; align-self: start; margin: 28px 0 0; }
