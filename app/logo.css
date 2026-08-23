@@ -150,7 +150,7 @@ body {
 .intro-indicators {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1px;
+  gap: 0;
   margin-top: 3rem;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
@@ -161,11 +161,11 @@ body {
   flex-direction: column;
   gap: 0.35rem;
   min-width: 0;
-  padding: 1.35rem 1.1rem;
+  padding: 29px clamp(32px, 2.8vw, 40px);
   border-right: 1px solid var(--line);
+  text-align: left;
 }
 
-.intro-indicators > div:first-child { padding-left: 0; }
 .intro-indicators > div:last-child { border-right: 0; }
 .intro-indicators strong { color: var(--navy); font-family: Manrope, sans-serif; font-size: 1.05rem; }
 .intro-indicators span { color: #647185; font-size: 0.82rem; line-height: 1.4; }
@@ -1102,37 +1102,51 @@ body {
 
 .plan-tabs {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   overflow: hidden;
-  border: 1px solid #bdd1db;
-  border-radius: 20px 20px 12px 12px;
-  background: #e3f7f8;
+  border: 0;
+  border-bottom: 1px solid #bfd0da;
+  border-radius: 0;
+  background: transparent;
 }
 
 .plan-tabs button {
-  min-height: 54px;
-  padding: 10px 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 48px;
+  padding: 10px 8px 12px;
   border: 0;
-  border-radius: 18px 18px 0 0;
+  border-bottom: 3px solid transparent;
+  border-radius: 0;
   background: transparent;
-  color: #ff8614;
+  color: #50647d;
   font: inherit;
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: .08em;
-  line-height: 1.25;
+  font-size: clamp(16px, 1.25vw, 18px);
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.35;
+  text-align: center;
   cursor: pointer;
-  transition: background-color 180ms ease, box-shadow 180ms ease;
+  transition: color 180ms ease, border-color 180ms ease;
 }
 
 .plan-tabs button:hover {
-  background: rgba(255, 255, 255, .45);
+  background: transparent;
+  color: #0b3568;
 }
 
 .plan-tabs button.is-active {
-  background: #0b3568;
-  box-shadow: 0 1px 0 #0b3568;
+  border-bottom-color: #0b3568;
+  background: transparent;
+  box-shadow: none;
+  color: #0b3568;
 }
+
+.plan-tabs button:nth-child(4) { display: inline-flex; color: #ff8614; }
+.plan-tabs button:nth-child(4).is-active { border-bottom-color: #ff8614; }
+.combo-price-note-standalone { display: none !important; }
 
 .plan-tabs button:focus-visible,
 .plan-tab-panel a:focus-visible,

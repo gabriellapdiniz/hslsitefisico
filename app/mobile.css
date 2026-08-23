@@ -21,8 +21,7 @@ img.brandmark {
   text-underline-offset: 3px;
 }
 
-.plan-tabs button:nth-child(4),
-.combo-price-note-inline { display: none; }
+.combo-price-note-inline { display: grid; }
 
 @media (max-width: 767px) {
   .hero {
@@ -190,17 +189,21 @@ img.brandmark {
   .intro-copy > :first-child { margin-top: 0; }
 
   .intro-indicators {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
+    gap: 0;
     margin-top: 32px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
   }
 
   .intro-indicators > div {
-    padding: 16px 12px;
+    padding: 22px 20px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
   }
 
-  .intro-indicators > div:first-child { padding-left: 12px; }
-  .intro-indicators > div:nth-child(2) { border-right: 0; }
-  .intro-indicators > div:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .intro-indicators > div:last-child { border-bottom: 0; }
   .intro-indicators strong { font-size: 14px; }
   .intro-indicators span { font-size: 12px; }
 
@@ -315,17 +318,14 @@ img.brandmark {
   }
 
   .plans .plan-tabs {
-    display: flex;
-    justify-content: space-between;
-    gap: clamp(6px, 1.8vw, 8px);
-    overflow: visible;
-    overflow-x: visible;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+    overflow: hidden;
     border: 0;
     border-bottom: 1px solid #d7dfe6;
     border-radius: 0;
     background: transparent;
-    scrollbar-width: none;
-    scroll-snap-type: none;
   }
 
   .plans .plan-tabs::-webkit-scrollbar { display: none; }
@@ -334,8 +334,7 @@ img.brandmark {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    flex: 1 1 auto;
-    width: auto;
+    width: 100%;
     min-width: 0;
     min-height: 44px;
     padding: 8px 3px;
@@ -346,31 +345,29 @@ img.brandmark {
     color: #0b3568;
     font-size: 0;
     text-align: center;
-    white-space: nowrap;
-    overflow: visible;
-    scroll-snap-align: none;
+    white-space: normal;
   }
 
   .plans .plan-tabs button.is-active {
-    border-bottom-color: #ff8614;
+    border-bottom-color: #0b3568;
     background: transparent;
     box-shadow: none;
-    color: #ff8614;
+    color: #0b3568;
   }
 
-  .plans .plan-tabs button:nth-child(1) { order: 3; }
-  .plans .plan-tabs button:nth-child(2) { order: 1; }
-  .plans .plan-tabs button:nth-child(3) { order: 2; }
+  .plans .plan-tabs button:nth-child(1),
+  .plans .plan-tabs button:nth-child(2),
+  .plans .plan-tabs button:nth-child(3) { order: initial; }
   .plans .plan-tabs button:nth-child(4) {
     display: inline-flex;
     flex-direction: row-reverse;
-    order: 4;
+    order: initial;
     color: #ff8614;
   }
 
   .plans .plan-tabs button::after {
-    font-size: clamp(11px, 3vw, 12px);
-    font-weight: 800;
+    font-size: clamp(14px, 3.7vw, 15px);
+    font-weight: 600;
     letter-spacing: 0;
     line-height: 1.25;
   }
@@ -386,14 +383,14 @@ img.brandmark {
   .plans .plan-tabs button:nth-child(4)::before {
     content: "+";
     margin-left: 2px;
-    color: #2ec7e6;
-    font-size: clamp(11px, 3vw, 12px);
+    color: #ff8614;
+    font-size: clamp(14px, 3.7vw, 15px);
     font-weight: 900;
     line-height: 1.25;
   }
 
   .plans .plan-tabs button:nth-child(4).is-active {
-    border-bottom-color: #2ec7e6;
+    border-bottom-color: #ff8614;
   }
 
   .plans .plan-tab-panel {
@@ -582,8 +579,10 @@ img.brandmark {
   .intro .split { gap: clamp(24px, 4vw, 52px); }
   .intro-journey { display: none; }
   .intro-kicker > img { display: none; }
-  .intro-indicators { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 30px; }
-  .intro-indicators > div { min-height: 0; height: auto; }
+  .intro-indicators { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; margin-top: 30px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .intro-indicators > div { min-height: 0; height: auto; padding: clamp(26px, 3vw, 32px) clamp(32px, 4vw, 40px); border-right: 0; text-align: left; }
+  .intro-indicators > div:nth-child(odd) { border-right: 1px solid var(--line); }
+  .intro-indicators > div:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
 
   .programs { padding-block: clamp(52px, 6vw, 76px); }
   .section-head { gap: 22px; }
@@ -610,8 +609,8 @@ img.brandmark {
   .plans-head h2 { font-size: clamp(43px, 5.2vw, 58px); }
   .plans .plan-tabs-wrap { margin-top: 24px; }
   .plans .plan-tabs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; overflow: hidden; border: 0; border-bottom: 1px solid #bfd0da; border-radius: 0; background: transparent; }
-  .plans .plan-tabs button { position: relative; display: inline-flex; min-width: 0; min-height: 48px; padding: 8px 6px 12px; border: 0; border-bottom: 3px solid transparent; border-radius: 0; background: transparent; box-shadow: none; color: #50647d; font-size: 0; letter-spacing: 0; white-space: normal; }
-  .plans .plan-tabs button::after { font-size: clamp(12px, 1.5vw, 14px); font-weight: 700; line-height: 1.2; }
+  .plans .plan-tabs button { position: relative; display: inline-flex; width: 100%; min-width: 0; min-height: 48px; padding: 8px 6px 12px; border: 0; border-bottom: 3px solid transparent; border-radius: 0; background: transparent; box-shadow: none; color: #50647d; font-size: 0; letter-spacing: 0; white-space: normal; }
+  .plans .plan-tabs button::after { font-size: clamp(16px, 1.7vw, 18px); font-weight: 600; line-height: 1.35; }
   .plans .plan-tabs button:nth-child(1)::after { content: "Psicopedagogia"; }
   .plans .plan-tabs button:nth-child(2)::after { content: "Inglês"; }
   .plans .plan-tabs button:nth-child(3)::after { content: "Reforço"; }
